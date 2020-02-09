@@ -122,4 +122,14 @@
     <MESSAGE value="Init App + EsLint" />
     <option name="LAST_COMMIT_MESSAGE" value="Init App + EsLint" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274177218">
+      <screen x="0" y="23" width="1920" height="1096" />
+    </state>
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274177218" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274179146">
+      <screen x="0" y="23" width="1920" height="1096" />
+    </state>
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274179146" />
+  </component>
 </project>
