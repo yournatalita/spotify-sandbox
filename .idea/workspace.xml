@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +58,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/src/pages" />
       <recent name="$PROJECT_DIR$/app/src" />
       <recent name="$PROJECT_DIR$/app" />
@@ -89,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581258692420</updated>
       <workItem from="1581258693790" duration="5630000" />
-      <workItem from="1581273612753" duration="515000" />
+      <workItem from="1581273612753" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -105,7 +101,28 @@
       <option name="project" value="LOCAL" />
       <updated>1581273362543</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Init App + EsLint">
+      <created>1581274177378</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581274177378</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Init App + EsLint">
+      <created>1581274215362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581274215362</updated>
+    </task>
+    <task id="LOCAL-00005" summary="GitIgnore fix">
+      <created>1581274309747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581274309747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,20 +137,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init App + SSA" />
     <MESSAGE value="Init App + EsLint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init App + EsLint" />
+    <MESSAGE value="GitIgnore fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="GitIgnore fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274215237">
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274401582">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274215237" />
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274216996">
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274401582" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274311149">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274216996" />
-    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274209663">
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274311149" />
+    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274399119">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.23.1920.1096@0.23.1920.1096" timestamp="1581274209663" />
+    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.23.1920.1096@0.23.1920.1096" timestamp="1581274399119" />
   </component>
 </project>
