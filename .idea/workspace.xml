@@ -123,13 +123,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Init App + EsLint" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274177218">
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274215237">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274177218" />
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274179146">
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274215237" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274216996">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274179146" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274216996" />
+    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274209663">
+      <screen x="0" y="23" width="1920" height="1096" />
+    </state>
+    <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.23.1920.1096@0.23.1920.1096" timestamp="1581274209663" />
   </component>
 </project>
