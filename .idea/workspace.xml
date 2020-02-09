@@ -2,22 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/pages/home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="97" />
-    <option name="y" value="24" />
-    <option name="width" value="1734" />
-    <option name="height" value="1064" />
   </component>
   <component name="ProjectId" id="1XaA0EBnc9cFRtGxCmNlvvFFunv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -29,9 +42,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.0" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -58,9 +73,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/src/pages" />
-      <recent name="$PROJECT_DIR$/app/src" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
@@ -85,7 +100,8 @@
       <option name="presentableId" value="Default" />
       <updated>1581258692420</updated>
       <workItem from="1581258693790" duration="5630000" />
-      <workItem from="1581273612753" duration="776000" />
+      <workItem from="1581273612753" duration="2648000" />
+      <workItem from="1581276748964" duration="2076000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -122,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581274309747</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="GitIgnore fix 2">
+      <created>1581274416221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581274416221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +154,7 @@
       <list>
         <option value="$PROJECT_DIR$/../nextjs-starter-kit/src/ui/services/Icon/Icon.d.ts" />
         <option value="$PROJECT_DIR$/../nextjs-starter-kit/src/ui/components/User/User.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/store/index.d.ts" />
       </list>
     </option>
   </component>
@@ -138,20 +162,29 @@
     <MESSAGE value="Init App + SSA" />
     <MESSAGE value="Init App + EsLint" />
     <MESSAGE value="GitIgnore fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="GitIgnore fix" />
+    <MESSAGE value="GitIgnore fix 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="GitIgnore fix 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274401582">
+    <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581275911503">
+      <screen x="0" y="23" width="1920" height="1102" />
+    </state>
+    <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581274416116">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274401582" />
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274311149">
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274416116" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1581274417728">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274311149" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274417728" />
     <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274399119">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
     <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.23.1920.1096@0.23.1920.1096" timestamp="1581274399119" />
+    <state x="651" y="305" width="683" height="486" key="find.popup" timestamp="1581277429730">
+      <screen x="0" y="23" width="1920" height="1100" />
+    </state>
+    <state x="651" y="305" width="683" height="486" key="find.popup/0.23.1920.1100@0.23.1920.1100" timestamp="1581277429730" />
   </component>
 </project>
