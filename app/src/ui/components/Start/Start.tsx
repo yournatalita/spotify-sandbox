@@ -24,6 +24,7 @@ const Start = (): JSX.Element => {
               <span className={styles.labelText}>Don{"'"}t have an account yet?</span>
               <UILink
                 themes={['white', 'underline', 'uppercase']}
+                external={true}
                 href={
                   'https://accounts.spotify.com/ru/login/?_locale=en&continue=https:%2F%2Fwww.spotify.com%2Fru-ru%2Faccount%2Foverview%2F'
                 }

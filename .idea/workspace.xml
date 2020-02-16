@@ -2,83 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-BlackIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-BoldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Extrabld.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-ExtrabldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-LightIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-RegularIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-Semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-SemiboldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNova-ThinIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-BlackIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-BoldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Extrabld.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-ExtrabldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-LightIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-RegularIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-SemiboldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaCond-ThinIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-BlackIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-BoldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Extrabld.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-ExtrabldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-LightIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-RegularIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-SemiboldIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaExCn-ThinIt.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/fonts/ProximaNovaT-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/icons/spotify-logo-white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/_services.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/core/base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/core/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/core/grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/core/helpers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/core/typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/mixins/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/mixins/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/variables/_colors.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/variables/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/assets/styles/variables/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/SpotifyLogo/SpotifyLogo.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/SpotifyLogo/SpotifyLogo.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/SpotifyLogo/SpotifyLogo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +96,7 @@
       <workItem from="1581273612753" duration="2648000" />
       <workItem from="1581276748964" duration="2878000" />
       <workItem from="1581848140452" duration="1122000" />
-      <workItem from="1581849269490" duration="11312000" />
+      <workItem from="1581849269490" duration="11605000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -220,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581281624409</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Start Page Done">
+      <created>1581863627514</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1581863627514</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +175,8 @@
     <MESSAGE value="GitIgnore fix" />
     <MESSAGE value="GitIgnore fix 2" />
     <MESSAGE value="Config WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Config WIP" />
+    <MESSAGE value="Start Page Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start Page Done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="239" key="#EditorConfig" timestamp="1581863497295">
@@ -252,16 +187,16 @@
       <screen x="0" y="23" width="1920" height="1102" />
     </state>
     <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581281624262">
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581863627282">
       <screen x="0" y="23" width="1920" height="1098" />
     </state>
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274416116" />
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1581281624262" />
-    <state x="560" y="312" key="Vcs.Push.Dialog.v2" timestamp="1581281626981">
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863627282" />
+    <state x="560" y="312" key="Vcs.Push.Dialog.v2" timestamp="1581863629349">
       <screen x="0" y="23" width="1920" height="1098" />
     </state>
     <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274417728" />
-    <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581281626981" />
+    <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863629349" />
     <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274399119">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>

@@ -7,9 +7,10 @@ import { IUILinkProps } from './UILink.d';
 
 import styles from './UILink.module.scss';
 
-const ExternalLink = ({ themes, children, href }: IUILinkProps): JSX.Element => {
+const ExternalLink = ({ themes, children, href, target = '_blank' }: IUILinkProps): JSX.Element => {
   return (
     <a
+      target={target}
       className={classNames(
         styles.root,
         themes.reduce(
@@ -26,7 +27,11 @@ const ExternalLink = ({ themes, children, href }: IUILinkProps): JSX.Element => 
 
 const UILink = ({ external, themes, href, to, children }: IUILinkProps): JSX.Element => {
   if (external) {
-    return <ExternalLink themes={themes} href={href} />;
+    return (
+      <ExternalLink themes={themes} href={href}>
+        {children}
+      </ExternalLink>
+    );
   }
 
   return (
