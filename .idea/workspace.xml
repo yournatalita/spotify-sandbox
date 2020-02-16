@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/UILink/UILink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +165,11 @@
         <option value="$PROJECT_DIR$/app/src/ui/UILink/UILink.d.ts" />
       </list>
     </option>
+    <option name="additionalRoots">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init App + SSA" />
@@ -197,6 +199,14 @@
     </state>
     <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274417728" />
     <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863629349" />
+    <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581889068082">
+      <screen x="0" y="23" width="1920" height="1100" />
+    </state>
+    <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1920.1100@0.23.1920.1100" timestamp="1581889068082" />
+    <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581888962081">
+      <screen x="0" y="23" width="1920" height="1100" />
+    </state>
+    <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.1100@0.23.1920.1100" timestamp="1581888962081" />
     <state x="644" y="311" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1581274399119">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
@@ -212,7 +222,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/node_modules/@types/react-router/index.d.ts</url>
           <line>25</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

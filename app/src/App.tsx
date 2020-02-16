@@ -4,6 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { history } from './store';
 
 import Home from './pages/home';
+import Main from './pages/main';
 
 const App = (): any => {
   return (
@@ -11,6 +12,7 @@ const App = (): any => {
       <ConnectedRouter history={history}>
         <Switch>
           <Route exact path={'/'} component={Home} />
+          <Route exact path={'/main'} component={Main} />
         </Switch>
       </ConnectedRouter>
     </div>

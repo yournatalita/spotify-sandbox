@@ -1,0 +1,3 @@
+const RECOMMENDATIONS = 'browse/RECOMMENDATIONS';
+
+export { RECOMMENDATIONS };
