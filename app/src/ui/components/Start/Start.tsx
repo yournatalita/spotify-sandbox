@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '../../elements/Button/Button';
 import SpotifyLogo from '../../elements/SpotifyLogo/SpotifyLogo';
 import UILink from '../../elements/UILink/UILink';
 
@@ -18,7 +17,15 @@ const Start = (): JSX.Element => {
           </div>
           <div className={styles.bottom}>
             <div className={styles.button}>
-              <Button text={'Login with Spotify'} />
+              <UILink
+                role={'button'}
+                themes={['green', 'uppercase']}
+                external={true}
+                target={''}
+                href={'http://localhost:8888/login'}
+              >
+                Login with Spotify
+              </UILink>
             </div>
             <div className={styles.optionalText}>
               <span className={styles.labelText}>Don{"'"}t have an account yet?</span>

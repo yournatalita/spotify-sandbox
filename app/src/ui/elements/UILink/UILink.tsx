@@ -6,45 +6,63 @@ import { Link } from 'react-router-dom';
 import { IUILinkProps } from './UILink.d';
 
 import styles from './UILink.module.scss';
+import stylesButton from '../../elements/Button/Button.module.scss';
 
-const ExternalLink = ({ themes, children, href, target = '_blank' }: IUILinkProps): JSX.Element => {
-  return (
-    <a
-      target={target}
-      className={classNames(
+const getClasses = ({ role, themes }: IUILinkProps) => {
+  return !role || role !== 'button'
+    ? classNames(
         styles.root,
         themes.reduce(
           (classes: string, theme: string) => (classes += `${styles[`theme-${theme}`]} `),
           ''
         )
-      )}
-      href={href}
-    >
+      )
+    : classNames(
+        stylesButton.root,
+        themes.reduce(
+          (classes: string, theme: string) => (classes += `${stylesButton[`theme-${theme}`]} `),
+          ''
+        )
+      );
+};
+
+const ExternalLink = ({
+  themes,
+  role,
+  children,
+  href,
+  target = '_blank'
+}: IUILinkProps): JSX.Element => {
+  const classes = getClasses({ role, themes });
+
+  return (
+    <a target={target} className={classes} href={href}>
       {children}
     </a>
   );
 };
 
-const UILink = ({ external, themes, href, to, children }: IUILinkProps): JSX.Element => {
+const UILink = ({
+  external,
+  role,
+  themes,
+  href,
+  to,
+  children,
+  ...rest
+}: IUILinkProps): JSX.Element => {
+  const classes = getClasses({ role, themes });
+
   if (external) {
     return (
-      <ExternalLink themes={themes} href={href}>
+      <ExternalLink themes={themes} href={href} role={role} {...rest}>
         {children}
       </ExternalLink>
     );
   }
 
   return (
-    <Link
-      to={to || href || '/'}
-      className={classNames(
-        styles.root,
-        themes.reduce(
-          (classes: string, theme: string) => (classes += `${styles[`theme-${theme}`]} `),
-          ''
-        )
-      )}
-    >
+    <Link to={to || href || '/'} className={classes}>
       {children}
     </Link>
   );

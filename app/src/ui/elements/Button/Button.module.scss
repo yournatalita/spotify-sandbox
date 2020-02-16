@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  text-decoration: none;
   height: 36px;
   border-radius: 23px;
   font-size: $font-size-base;
@@ -26,6 +26,10 @@
     background-color: $s-green;
     color: $s-white;
     font-weight: 700;
+
+    &:hover {
+      background-color: $c-green-light;
+    }
   }
   &-uppercase {
     text-transform: uppercase;
