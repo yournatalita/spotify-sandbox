@@ -1,0 +1,30 @@
+@import "src/assets/styles/services";
+
+.root {
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+.theme {
+  &-green {
+
+  }
+
+  &-white {
+    color: $s-white;
+  }
+
+  &-underline {
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+
+    &:hover {
+      border-bottom: 1px solid $s-green;
+    }
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

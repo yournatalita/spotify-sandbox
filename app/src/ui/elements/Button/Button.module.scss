@@ -1,0 +1,38 @@
+@import "src/assets/styles/services";
+
+.root {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  border-radius: 23px;
+  font-size: $font-size-base;
+  text-align: center;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  color: $c-black;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.theme {
+  &-green {
+    background-color: $s-green;
+    color: $s-white;
+    font-weight: 700;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  &-white {
+    color: $s-black;
+    background-color: $s-white;
+  }
+}

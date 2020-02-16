@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Proxima Nova"), url("../../fonts/ProximaNova-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Proxima Nova"), url("../../fonts/ProximaNova-Bold.woff") format("woff");
+}
