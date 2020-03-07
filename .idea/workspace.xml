@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/actions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/browse.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/browse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/personalization.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/personalization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/main.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +56,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/assets/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/store/models/Personalization" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -52,11 +75,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/../nextjs-chat-frontend/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/store/models/Personalization" />
+      <recent name="$PROJECT_DIR$/src/controllers" />
       <recent name="$PROJECT_DIR$/app/src/assets/styles" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
@@ -94,6 +119,7 @@
       <workItem from="1581276748964" duration="2878000" />
       <workItem from="1581848140452" duration="1122000" />
       <workItem from="1581849269490" duration="11605000" />
+      <workItem from="1583601830029" duration="7639000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -151,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581863627514</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="WIP: Get Recommendations CORS Issue">
+      <created>1581889123011</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1581889123011</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +196,10 @@
         <option value="$PROJECT_DIR$/app/src/store/index.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/elements/SpotifyLogo/SpotifyLogo.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/UILink/UILink.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/setupProxy.js" />
+        <option value="$PROJECT_DIR$/src/controllers/browse.d.ts" />
+        <option value="$PROJECT_DIR$/src/controllers/personalization.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.d.ts" />
       </list>
     </option>
     <option name="additionalRoots">
@@ -178,7 +215,8 @@
     <MESSAGE value="GitIgnore fix 2" />
     <MESSAGE value="Config WIP" />
     <MESSAGE value="Start Page Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start Page Done" />
+    <MESSAGE value="WIP: Get Recommendations CORS Issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: Get Recommendations CORS Issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="239" key="#EditorConfig" timestamp="1581863497295">
@@ -189,16 +227,22 @@
       <screen x="0" y="23" width="1920" height="1102" />
     </state>
     <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581863627282">
-      <screen x="0" y="23" width="1920" height="1098" />
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581889122864">
+      <screen x="0" y="23" width="1920" height="1100" />
     </state>
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274416116" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863627282" />
-    <state x="560" y="312" key="Vcs.Push.Dialog.v2" timestamp="1581863629349">
-      <screen x="0" y="23" width="1920" height="1098" />
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889122864" />
+    <state x="378" y="240" key="SettingsEditor" timestamp="1583613993045">
+      <screen x="0" y="23" width="1920" height="1096" />
+    </state>
+    <state x="378" y="240" key="SettingsEditor/0.23.1920.1096@0.23.1920.1096" timestamp="1583613993045" />
+    <state x="560" y="313" key="Vcs.Push.Dialog.v2" timestamp="1581889125481">
+      <screen x="0" y="23" width="1920" height="1100" />
     </state>
     <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274417728" />
     <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863629349" />
+    <state x="560" y="313" key="Vcs.Push.Dialog.v2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889125481" />
     <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581889068082">
       <screen x="0" y="23" width="1920" height="1100" />
     </state>

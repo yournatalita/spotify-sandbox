@@ -4,6 +4,9 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 
+import personalization from '../store/models/Personalization';
+import browse from '../store/models/Browse';
+
 export const history = createBrowserHistory();
 const enhancers = [];
 const middleware = [thunk, routerMiddleware(history)];
@@ -16,6 +19,8 @@ if (typeof devToolsExtension === 'function') {
 }
 
 const reducers = combineReducers({
+  personalization,
+  browse,
   router: connectRouter(history)
 });
 

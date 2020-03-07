@@ -1,27 +1,42 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { TMainProps } from './main.d';
-import { operationsBrowse } from '../store/models/Browse';
+import MainLayout from '../ui/containers/MainLayout/MainLayout';
 
-const Main = ({ getRecommendations }: TMainProps): JSX.Element => {
+import { MainProps } from './main.d';
+import { operationsPersonalization } from '../store/models/Personalization';
+
+const Main = ({ getPersonalization }: MainProps): JSX.Element => {
   useEffect(() => {
-    getRecommendations({
-      url: '/api/recommendations',
-      method: 'get'
+    getPersonalization({
+      url: '/api/personalization',
+      method: 'get',
+      params: {
+        typePath: 'artists',
+        limit: 40,
+        offset: 0,
+        time_range: 'long_term'
+      }
     });
-  }, []);
+    getPersonalization({
+      url: '/api/personalization',
+      method: 'get',
+      params: {
+        typePath: 'tracks',
+        limit: 40,
+        offset: 0,
+        time_range: 'long_term'
+      }
+    });
+  }, [getPersonalization]);
 
-  return <div className="Main">Main</div>;
+  return <MainLayout />;
 };
 
-const mapStateToProps = (state: any) => {
-  console.log(state);
-  return state;
-};
+const mapStateToProps = (state: MainProps): MainProps => state;
 
 const mapDispatchToProps = {
-  ...operationsBrowse
+  ...operationsPersonalization
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

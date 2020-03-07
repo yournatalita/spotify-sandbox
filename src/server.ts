@@ -13,6 +13,8 @@ const stateKey = 'spotify_auth_state';
 const app = express();
 
 import * as userController from './controllers/user';
+import * as browseController from './controllers/browse';
+import * as personalizationController from './controllers/personalization';
 
 const APP_PATH = path.join(__dirname, '../app/public');
 
@@ -25,13 +27,24 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
   app.get('/api/user', (req, res): void => {
     userController.getUser({ accessToken, req, res });
   });
+
+  app.get('/api/recommendations', (req, res): void => {
+    browseController.getRecommendations({ accessToken, req, res });
+  });
+
+  app.get('/api/personalization', (req, res): void => {
+    const { typePath } = req.query || {};
+    const params = req.query;
+
+    personalizationController.getPersonalization({ accessToken, req, res, options: { typePath }, params });
+  });
 };
 
 app.get('/login', (_req, res) => {
   const STATE = crypto.randomBytes(20).toString('hex');
   res.cookie(stateKey, STATE);
 
-  const scope = 'user-read-private user-read-email';
+  const scope = 'user-top-read user-follow-read user-read-private user-read-email';
   res.redirect(
     'https://accounts.spotify.com/authorize?' +
       querystring.stringify({
