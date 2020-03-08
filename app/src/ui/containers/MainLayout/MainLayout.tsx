@@ -1,19 +1,21 @@
 import * as React from 'react';
 
-import ArtistsLists from '../../components/ArtistsLists/ArtistsLists';
+import ArtistsLists from '../../containers/ArtistsLists/ArtistsLists';
 
 import { MainLayoutProps } from './MainLayout.d';
 import styles from './MainLayout.module.scss';
 import { connect } from 'react-redux';
 
-const MainLayout = ({ personalization = {} }: MainLayoutProps): JSX.Element => {
-  const { artists, tracks } = personalization;
-  // TODO: remove debugging
-  console.log({ artists, tracks });
+const MainLayout = (): JSX.Element => {
   return (
     <div className={styles.root}>
       <div className={styles.artistsWrapper}>
-        <ArtistsLists artists={artists} />
+        <div className={styles.container}>
+          <h2 className={styles.header}>Your Top Artists</h2>
+        </div>
+        <div className={styles.artistsContainer}>
+          <ArtistsLists />
+        </div>
       </div>
       <div className={styles.tracksWrapper} />
     </div>

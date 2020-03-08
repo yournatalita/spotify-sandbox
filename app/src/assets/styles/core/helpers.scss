@@ -8,3 +8,8 @@
   padding: 0 !important;
   border: 0 !important;
 }
+
+.js-focus-visible:focus:not(.focus-visible) {
+  outline: none;
+}
+

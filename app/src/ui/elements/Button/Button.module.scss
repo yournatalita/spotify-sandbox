@@ -1,4 +1,4 @@
-@import "src/assets/styles/services";
+@import 'src/assets/styles/services';
 
 .root {
   appearance: none;
@@ -35,8 +35,24 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+
+  &-smallUnderline {
+    background: transparent;
+  }
   &-white {
     color: $s-black;
     background-color: $s-white;
+  }
+  &-whiteText {
+    color: $c-white;
+    font-weight: 700;
+    opacity: 0.6;
+    padding: 0;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1);
+    }
+
   }
 }

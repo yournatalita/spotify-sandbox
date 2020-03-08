@@ -1,6 +1,7 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, JSX } from 'react';
 
-export interface IButtonProps extends ButtonHTMLAttributes {
+export interface ButtonProps extends ButtonHTMLAttributes {
   themes?: string[];
-  text: string | object;
+  text?: string | object;
+  children?: JSX.Element;
 }

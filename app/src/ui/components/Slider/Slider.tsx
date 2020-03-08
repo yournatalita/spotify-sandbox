@@ -5,8 +5,6 @@ import { SliderProps } from './Slider.d';
 import styles from './Slider.module.scss';
 
 const Slider = ({ params, children }: SliderProps): JSX.Element => {
-  // TODO: remove debugging
-  console.log(children);
   return (
     <div className={styles.root}>
       <Swiper {...params}>{children}</Swiper>

@@ -10,9 +10,13 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
     .then(response => {
       const { data } = response;
       if (data && data.items && data.items[0].type === 'artist') {
-        dispatch(actions.getPersonalizationArtists(data));
+        dispatch(
+          actions.getPersonalizationArtists({ ...data, timeRange: options.params.time_range })
+        );
       } else {
-        dispatch(actions.getPersonalizationTracks(data));
+        dispatch(
+          actions.getPersonalizationTracks({ ...data, timeRange: options.params.time_range })
+        );
       }
     })
     .catch(e => {

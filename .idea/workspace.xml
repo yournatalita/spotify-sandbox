@@ -2,26 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/ArtistsLists/ArtistsLists.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/ArtistsLists/ArtistsLists.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Radio/Radio.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Radio/Radio.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Radio/Radio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/styles/core/helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/assets/styles/core/helpers.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/assets/styles/variables/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/assets/styles/variables/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/pages/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/ArtistsLists/ArtistsLists.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/elements/Button/Button.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +87,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/ui/containers" />
       <recent name="$PROJECT_DIR$/app/src/ui/elements" />
       <recent name="$PROJECT_DIR$/app/src/assets/icons" />
       <recent name="$PROJECT_DIR$/app/src" />
       <recent name="$PROJECT_DIR$/app/src/assets/fonts" />
-      <recent name="$PROJECT_DIR$/app/src/ui/components" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,7 +119,8 @@
       <workItem from="1581276748964" duration="2878000" />
       <workItem from="1581848140452" duration="1122000" />
       <workItem from="1581849269490" duration="11605000" />
-      <workItem from="1583601830029" duration="17622000" />
+      <workItem from="1583601830029" duration="28005000" />
+      <workItem from="1583701552654" duration="908000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -187,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583614474557</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="WIP: Color Palette">
+      <created>1583687958947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583687958947</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +218,7 @@
         <option value="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsList.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/ui/elements/Radio/Radio.d.ts" />
       </list>
     </option>
     <option name="additionalRoots">
@@ -223,7 +236,8 @@
     <MESSAGE value="Start Page Done" />
     <MESSAGE value="WIP: Get Recommendations CORS Issue" />
     <MESSAGE value="WIP: Get Personalizations" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP: Get Personalizations" />
+    <MESSAGE value="WIP: Color Palette" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: Color Palette" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="239" key="#EditorConfig" timestamp="1581863497295">
@@ -239,22 +253,22 @@
     </state>
     <state x="721" y="269" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1098@0.23.1920.1098" timestamp="1583616399376" />
     <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1583614474419">
-      <screen x="0" y="23" width="1920" height="1096" />
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1583687958763">
+      <screen x="0" y="23" width="1920" height="1100" />
     </state>
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614474419" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863627282" />
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889122864" />
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1100@0.23.1920.1100" timestamp="1583687958763" />
     <state x="378" y="240" key="SettingsEditor" timestamp="1583613993045">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
     <state x="378" y="240" key="SettingsEditor/0.23.1920.1096@0.23.1920.1096" timestamp="1583613993045" />
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1583614476502">
-      <screen x="0" y="23" width="1920" height="1096" />
+    <state x="560" y="313" key="Vcs.Push.Dialog.v2" timestamp="1583687961657">
+      <screen x="0" y="23" width="1920" height="1100" />
     </state>
     <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614476502" />
     <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863629349" />
-    <state x="560" y="313" key="Vcs.Push.Dialog.v2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889125481" />
+    <state x="560" y="313" key="Vcs.Push.Dialog.v2/0.23.1920.1100@0.23.1920.1100" timestamp="1583687961657" />
     <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581889068082">
       <screen x="0" y="23" width="1920" height="1100" />
     </state>

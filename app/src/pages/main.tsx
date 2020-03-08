@@ -13,9 +13,9 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
       method: 'get',
       params: {
         typePath: 'artists',
-        limit: 40,
+        limit: 30,
         offset: 0,
-        time_range: 'long_term'
+        time_range: 'short_term'
       }
     });
     getPersonalization({
@@ -23,9 +23,9 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
       method: 'get',
       params: {
         typePath: 'tracks',
-        limit: 40,
+        limit: 30,
         offset: 0,
-        time_range: 'long_term'
+        time_range: 'short_term'
       }
     });
   }, [getPersonalization]);

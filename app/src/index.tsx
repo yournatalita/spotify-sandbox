@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
+// focus-visible polyfill
+import 'focus-visible';
+
 import '../src/assets/styles/index.scss';
 
 import App from './App';
