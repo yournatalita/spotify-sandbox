@@ -1,0 +1,12 @@
+:global {
+  @import '~swiper/src/swiper.scss';
+
+  .swiper-container {
+    width: 100%;
+  }
+}
+
+.root {
+  display: flex;
+  width: 100%;
+}

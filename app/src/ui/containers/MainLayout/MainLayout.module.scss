@@ -1,0 +1,17 @@
+@import 'src/assets/styles/services';
+
+.root {
+  min-height: 100vh;
+  width: 100%;
+  background: $g-background-black;
+}
+
+.artistsWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.tracksWrapper {
+  display: flex;
+  width: 100%;
+}

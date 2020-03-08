@@ -2,30 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/store/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/browse.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/browse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/personalization.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/personalization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsLists.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/main.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/main.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/pages/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/pages/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/assets/styles/variables/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/assets/styles/variables/_colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/operations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Personalization/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/components/Start/Start.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +115,7 @@
       <workItem from="1581276748964" duration="2878000" />
       <workItem from="1581848140452" duration="1122000" />
       <workItem from="1581849269490" duration="11605000" />
-      <workItem from="1583601830029" duration="7639000" />
+      <workItem from="1583601830029" duration="17622000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -184,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581889123011</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="WIP: Get Personalizations">
+      <created>1583614474557</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583614474557</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +203,9 @@
         <option value="$PROJECT_DIR$/src/controllers/browse.d.ts" />
         <option value="$PROJECT_DIR$/src/controllers/personalization.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/ui/components/ArtistsLists/ArtistsList.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.d.ts" />
       </list>
     </option>
     <option name="additionalRoots">
@@ -216,31 +222,37 @@
     <MESSAGE value="Config WIP" />
     <MESSAGE value="Start Page Done" />
     <MESSAGE value="WIP: Get Recommendations CORS Issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP: Get Recommendations CORS Issue" />
+    <MESSAGE value="WIP: Get Personalizations" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: Get Personalizations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="239" key="#EditorConfig" timestamp="1581863497295">
       <screen x="0" y="23" width="1920" height="1098" />
     </state>
     <state x="470" y="239" key="#EditorConfig/0.23.1920.1098@0.23.1920.1098" timestamp="1581863497295" />
-    <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581275911503">
-      <screen x="0" y="23" width="1920" height="1102" />
+    <state x="588" y="411" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583615863990">
+      <screen x="0" y="23" width="1920" height="1098" />
     </state>
+    <state x="588" y="411" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1098@0.23.1920.1098" timestamp="1583615863990" />
+    <state x="721" y="269" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583616399376">
+      <screen x="0" y="23" width="1920" height="1098" />
+    </state>
+    <state x="721" y="269" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1098@0.23.1920.1098" timestamp="1583616399376" />
     <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1581889122864">
-      <screen x="0" y="23" width="1920" height="1100" />
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1583614474419">
+      <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274416116" />
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614474419" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863627282" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889122864" />
     <state x="378" y="240" key="SettingsEditor" timestamp="1583613993045">
       <screen x="0" y="23" width="1920" height="1096" />
     </state>
     <state x="378" y="240" key="SettingsEditor/0.23.1920.1096@0.23.1920.1096" timestamp="1583613993045" />
-    <state x="560" y="313" key="Vcs.Push.Dialog.v2" timestamp="1581889125481">
-      <screen x="0" y="23" width="1920" height="1100" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1583614476502">
+      <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1581274417728" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614476502" />
     <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1581863629349" />
     <state x="560" y="313" key="Vcs.Push.Dialog.v2/0.23.1920.1100@0.23.1920.1100" timestamp="1581889125481" />
     <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581889068082">

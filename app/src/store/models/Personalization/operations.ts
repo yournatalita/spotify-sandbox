@@ -9,8 +9,6 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
   axios(options)
     .then(response => {
       const { data } = response;
-      // TODO: remove debugging
-      console.log(data.items[0].type);
       if (data && data.items && data.items[0].type === 'artist') {
         dispatch(actions.getPersonalizationArtists(data));
       } else {

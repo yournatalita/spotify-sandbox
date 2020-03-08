@@ -2,12 +2,12 @@ import { BrowserHistoryBuildOptions } from 'history';
 // @ts-ignore
 import { SpotifyApi } from '@types/spotify-api';
 
-interface Router {
+type Router = {
   location?: BrowserHistoryBuildOptions;
   action?: string;
 }
 
-interface Personalization {
+export interface Personalization {
   artists?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
   tracks?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.TrackObjectFull>;
 }

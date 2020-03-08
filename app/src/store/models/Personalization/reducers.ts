@@ -7,14 +7,12 @@ const reducer = (state = {}, { type, payload }: IReducerReturn) => {
     case types.ARTISTS:
       return {
         ...state,
-        ...payload,
-        isLoaded: true
+        ...payload
       };
     case types.TRACKS:
       return {
         ...state,
-        ...payload,
-        isLoaded: true
+        ...payload
       };
     default:
       return state;
