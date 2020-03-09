@@ -7,6 +7,12 @@ type Router = {
   action?: string;
 }
 
+type PersinalizationItem =  {
+  short_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
+  long_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
+  medium_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
+}
+
 export interface Personalization {
   artists?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
   tracks?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.TrackObjectFull>;

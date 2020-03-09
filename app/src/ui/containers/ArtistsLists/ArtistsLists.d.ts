@@ -5,6 +5,7 @@ type TPersonalizationRequest = (options: IRequest) => {};
 
 export interface ArtistsListProps extends Personalization {
   getPersonalization?: TPersonalizationRequest;
+  setRangeChosenArtists?: (range: string) => {};
 }
 
 export interface ChangeTermEvent {

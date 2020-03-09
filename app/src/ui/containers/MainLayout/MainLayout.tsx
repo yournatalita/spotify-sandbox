@@ -6,7 +6,9 @@ import { MainLayoutProps } from './MainLayout.d';
 import styles from './MainLayout.module.scss';
 import { connect } from 'react-redux';
 
-const MainLayout = (): JSX.Element => {
+const MainLayout = ({ personalization }: MainLayoutProps): JSX.Element => {
+  const { artists } = personalization || {};
+
   return (
     <div className={styles.root}>
       <div className={styles.artistsWrapper}>
@@ -14,7 +16,7 @@ const MainLayout = (): JSX.Element => {
           <h2 className={styles.header}>Your Top Artists</h2>
         </div>
         <div className={styles.artistsContainer}>
-          <ArtistsLists />
+          {artists && artists.checkedRange && <ArtistsLists />}
         </div>
       </div>
       <div className={styles.tracksWrapper} />

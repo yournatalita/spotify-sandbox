@@ -11,11 +11,17 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
       const { data } = response;
       if (data && data.items && data.items[0].type === 'artist') {
         dispatch(
-          actions.getPersonalizationArtists({ ...data, timeRange: options.params.time_range })
+          actions.getPersonalizationArtists({
+            [options.params.time_range]: { ...data, timeRange: options.params.time_range },
+            checkedRange: options.params.time_range
+          })
         );
       } else {
         dispatch(
-          actions.getPersonalizationTracks({ ...data, timeRange: options.params.time_range })
+          actions.getPersonalizationTracks({
+            [options.params.time_range]: { ...data, timeRange: options.params.time_range },
+            checkedRange: options.params.time_range
+          })
         );
       }
     })
@@ -24,4 +30,8 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
     });
 };
 
-export { getPersonalization };
+const setRangeChosenArtists = (range: string) => (dispatch: Dispatch) => {
+  dispatch(actions.setArtistsChosen(range));
+};
+
+export { getPersonalization, setRangeChosenArtists };

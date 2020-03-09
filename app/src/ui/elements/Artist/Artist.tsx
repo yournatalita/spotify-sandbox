@@ -6,12 +6,16 @@ import styles from './Artist.module.scss';
 
 const Artist = ({ genres, id, images, name, popularity, href }: ArtistsProps): JSX.Element => {
   const { data } = usePalette(images[0].url);
-  const darkVibrant = { '--darkVibrant': data.darkVibrant } as React.CSSProperties;
-  const lightVibrant = { '--lightVibrant': data.lightVibrant } as React.CSSProperties;
+  const darkVibrant = {
+    '--darkVibrant': data.darkVibrant || data.darkMuted || data.muted || data.vibrant
+  } as React.CSSProperties;
+  const lightVibrant = {
+    '--lightVibrant': data.lightVibrant || data.lightMuted || data.muted || data.vibrant
+  } as React.CSSProperties;
 
   return (
     <>
-      {data && data.lightVibrant && (
+      {data && lightVibrant && (
         <div className={styles.root} style={lightVibrant}>
           <a href={href} className={styles.wrapper} style={darkVibrant}>
             <div className={styles.imageIcon}>

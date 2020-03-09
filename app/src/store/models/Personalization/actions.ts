@@ -18,4 +18,11 @@ const getPersonalizationTracks = (data: RecommendationsObject): IReducerReturn =
   }
 });
 
-export { getPersonalizationArtists, getPersonalizationTracks };
+const setArtistsChosen = (data: RecommendationsObject): IReducerReturn => ({
+  type: types.ARTISTS_CHOSEN,
+  payload: {
+    checkedRange: data
+  }
+});
+
+export { getPersonalizationArtists, getPersonalizationTracks, setArtistsChosen };
