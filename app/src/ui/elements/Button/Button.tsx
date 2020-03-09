@@ -4,16 +4,24 @@ import { ButtonProps } from './Button.d';
 import classNames from 'classnames';
 import styles from './Button.module.scss';
 
-const Button = ({ text, themes = ['green', 'uppercase'], children }: ButtonProps): JSX.Element => {
+const Button = ({
+  text,
+  type = 'button',
+  themes = ['green', 'uppercase'],
+  mix,
+  children
+}: ButtonProps): JSX.Element => {
   return (
     <button
+      type={type}
       className={classNames(
         styles.root,
         themes.reduce(
           (classes: string, theme: string) => (classes += `${styles[`theme-${theme}`]} `),
           ' '
         ),
-        'js-focus-visible'
+        'js-focus-visible',
+        mix
       )}
     >
       {text || children}

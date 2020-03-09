@@ -4,6 +4,8 @@ import Swiper from 'react-id-swiper';
 import { SliderProps } from './Slider.d';
 import styles from './Slider.module.scss';
 
+export const getStyles = () => styles;
+
 const Slider = ({ params, children }: SliderProps): JSX.Element => {
   return (
     <div className={styles.root}>

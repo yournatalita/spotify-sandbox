@@ -18,3 +18,21 @@ body {
   display: block;
   margin: 0;
 }
+
+.Main {
+  position: relative;
+  background: $g-background-black;
+
+  &__Sidebar {
+    width: 230px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+  }
+
+  &__MainLayout {
+    margin-left: 230px;
+  }
+}

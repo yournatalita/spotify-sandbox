@@ -1,12 +1,46 @@
+@import 'src/assets/styles/services';
+
 :global {
   @import '~swiper/src/swiper.scss';
 
   .swiper-container {
     width: 100%;
+    padding-top: 40px;
+    margin-top: -40px;
+  }
+
+  .swiper-button-disabled {
+    pointer-events: none;
+
+    svg {
+      opacity: .5;
+    }
   }
 }
 
 .root {
   display: flex;
   width: 100%;
+}
+
+.buttonWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.buttonWrapperNext {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  z-index: 3;
+  transform: rotate(-180deg);
+}
+
+.buttonWrapperPrev {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  z-index: 3;
 }

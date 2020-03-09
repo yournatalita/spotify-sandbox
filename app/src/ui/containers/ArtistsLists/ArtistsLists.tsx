@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
+
+import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg';
 
 import Artist from '../../elements/Artist/Artist';
-import Slider from '../../components/Slider/Slider';
+import Button from '../../elements/Button/Button';
+import Slider, { getStyles as getStylesSlider } from '../../components/Slider/Slider';
 import Radio from '../../elements/Radio/Radio';
 
 import { MainProps } from '../../../pages/main.d';
-import { ArtistsListProps, ChangeTermEvent } from './ArtistsLists.d';
+import { ArtistsListProps, ChangeTermEvent, TSliderRenderProps } from './ArtistsLists.d';
 import styles from './ArtistsLists.module.scss';
 import { operationsPersonalization } from '../../../store/models/Personalization';
 
@@ -22,6 +26,27 @@ const getArtistsTerm = ({ getPersonalization, term }: ChangeTermEvent) => {
         time_range: term
       }
     });
+};
+
+const getArrow = (_value: TSliderRenderProps, type: string): JSX.Element => {
+  const stylesSlider = getStylesSlider();
+
+  return (
+    <div
+      className={classNames(
+        stylesSlider.buttonWrapper,
+        type === 'next' ? stylesSlider.buttonWrapperNext : stylesSlider.buttonWrapperPrev
+      )}
+    >
+      <Button
+        themes={['blackArrow', `blackArrow-${type}`]}
+        title={type === 'next' ? 'Вперёд' : 'Назад'}
+        mix={type === 'next' ? 'js-swiper-next' : 'js-swiper-prev'}
+      >
+        <ArrowLeft />
+      </Button>
+    </div>
+  );
 };
 
 const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
@@ -93,7 +118,15 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               spaceBetween: 20,
               freeMode: true,
               mousewheel: true,
-              rebuildOnUpdate: true
+              rebuildOnUpdate: true,
+              navigation: {
+                nextEl: '.js-swiper-next',
+                prevEl: '.js-swiper-prev'
+              },
+              renderPrevButton: (renderProps: TSliderRenderProps): JSX.Element =>
+                getArrow(renderProps, 'prev'),
+              renderNextButton: (renderProps: TSliderRenderProps): JSX.Element =>
+                getArrow(renderProps, 'next')
             }}
           >
             {items &&

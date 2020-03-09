@@ -53,6 +53,24 @@
       opacity: 1;
       transform: scale(1);
     }
+  }
 
+  &-blackArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-black-vibrant;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    &:hover {
+      //transform: none;
+    }
+
+    svg {
+      stroke: $c-white;
+      margin-left: -1px;
+    }
   }
 }
