@@ -26,6 +26,10 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
       }
     })
     .catch(e => {
+      if (e && e.response && e.response.status === 401) {
+        // TODO: remove debugging
+        console.log('here');
+      }
       console.error(e);
     });
 };

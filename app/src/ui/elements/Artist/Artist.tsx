@@ -42,6 +42,15 @@ const Artist = ({ genres, id, images, name, popularity, href }: ArtistsProps): J
               )}
             </ul>
           </a>
+          <div className={styles.background}>
+            <img
+              className={styles.backgroundImage}
+              alt={name}
+              title={name}
+              src={images[1].url}
+              srcSet={`${images[1].url}, ${images[0].url} 2x`}
+            />
+          </div>
         </div>
       )}
     </>
