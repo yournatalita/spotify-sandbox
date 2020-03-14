@@ -4,15 +4,22 @@ import classNames from 'classnames';
 
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg';
 
-import Artist from '../../elements/Artist/Artist';
+import Artist from '../../containers/Artist/Artist';
 import Button from '../../elements/Button/Button';
 import Slider, { getStyles as getStylesSlider } from '../../components/Slider/Slider';
 import Radio from '../../elements/Radio/Radio';
 
 import { MainProps } from '../../../pages/main.d';
-import { ArtistsListProps, ChangeTermEvent, TSliderRenderProps } from './ArtistsLists.d';
+import {
+  ArtistsListProps,
+  ChangeTermEvent,
+  TSliderRenderProps,
+  ArtistsProps
+} from './ArtistsLists.d';
 import styles from './ArtistsLists.module.scss';
+
 import { operationsPersonalization } from '../../../store/models/Personalization';
+import { operationsVideo } from '../../../store/models/Video/index';
 
 const getArtistsTerm = ({ getPersonalization, term }: ChangeTermEvent) => {
   getPersonalization &&
@@ -131,7 +138,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
           >
             {items &&
               items.length &&
-              items.map((artist: any) => (
+              items.map((artist: ArtistsProps) => (
                 <div key={artist.id} className={styles.item}>
                   <Artist {...artist} />
                 </div>
@@ -150,7 +157,8 @@ const mapStateToProps = (state: MainProps): ArtistsListProps => {
 };
 
 const mapDispatchToProps = {
-  ...operationsPersonalization
+  ...operationsPersonalization,
+  ...operationsVideo
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistsLists);

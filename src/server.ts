@@ -15,6 +15,7 @@ const app = express();
 import * as userController from './controllers/user';
 import * as browseController from './controllers/browse';
 import * as personalizationController from './controllers/personalization';
+import * as videosController from './controllers/videos';
 
 const APP_PATH = path.join(__dirname, '../app/public');
 
@@ -37,6 +38,12 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
     const params = req.query;
 
     personalizationController.getPersonalization({ accessToken, req, res, options: { typePath }, params });
+  });
+
+  app.get('/api/video', (req, res): void => {
+    const params = req.query;
+
+    videosController.searchVideo({ req, res, params });
   });
 };
 
