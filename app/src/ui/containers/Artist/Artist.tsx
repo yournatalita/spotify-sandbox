@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 import { usePalette } from 'react-palette';
 import classNames from 'classnames';
 
-import { ArtistStateProps } from './Artist.d';
+import { ArtistStateProps, Video } from './Artist.d';
 import { StoreInterface } from '../../../store/index.d';
 import { operationsVideo } from '../../../store/models/Video/index';
 
@@ -153,7 +153,7 @@ const Artist = ({ artist, video, getTopVideo, removeTopVideo }: ArtistStateProps
   );
 };
 
-const mapStateToProps = (state: StoreInterface): ArtistStateProps => {
+const mapStateToProps = (state: StoreInterface): Video => {
   return {
     video: state.video
   };
