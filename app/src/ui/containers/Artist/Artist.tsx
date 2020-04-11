@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, ComponentType } from 'react';
 import { connect } from 'react-redux';
 
 import YouTube from 'react-youtube';
 import { usePalette } from 'react-palette';
 import classNames from 'classnames';
 
-import { ArtistStateProps, Video } from './Artist.d';
+import { ArtistStateProps, DispatchProps, StateProps } from './Artist.d';
 import { StoreInterface } from '../../../store/index.d';
 import { operationsVideo } from '../../../store/models/Video/index';
 
@@ -13,7 +13,12 @@ import styles from './Artist.module.scss';
 
 const VIDEO_PLAYER_DURATION = 20;
 
-const Artist = ({ artist, video, getTopVideo, removeTopVideo }: ArtistStateProps): JSX.Element => {
+const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
+  artist,
+  video,
+  getTopVideo,
+  removeTopVideo
+}) => {
   const { genres, id, images, name, popularity } = artist;
   const [expanded, setExpanded] = useState(false);
   const [videoPlayed, setVideoPlayed] = useState(false);
@@ -153,13 +158,13 @@ const Artist = ({ artist, video, getTopVideo, removeTopVideo }: ArtistStateProps
   );
 };
 
-const mapStateToProps = (state: StoreInterface): Video => {
+const mapStateToProps = (state: StoreInterface): StateProps => {
   return {
     video: state.video
   };
 };
 
-const mapDispatchToProps = {
+const mapDispatchToProps: DispatchProps = {
   ...operationsVideo
 };
 

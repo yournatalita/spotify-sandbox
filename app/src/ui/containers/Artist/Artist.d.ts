@@ -1,21 +1,26 @@
-import * as SpotifyApi from '@types/spotify-api';
+/// <reference types="spotify-api" />
 
 import { IRequest } from '../../../store/models/declarations';
 import { Video } from '../../../store/models/Video';
 
-declare let ArtistProps: SpotifyApi.ArtistObjectFull;
-
 type TPersonalizationRequest = (options: IRequest) => {};
 
-export interface Video {
+export type Video = {
+  video?: Video;
+};
+
+export interface StateProps {
   video?: Video;
 }
 
 export interface ArtistStateProps {
-  artist: ArtistProps;
+  artist: SpotifyApi.SingleArtistResponse;
+  video?: Video;
+}
+
+export interface DispatchProps {
   getTopVideo?: TPersonalizationRequest;
   getPersonalization?: TPersonalizationRequest;
   setRangeChosenArtists?: (range: string) => {};
   removeTopVideo?: () => {};
-  video?: Video;
 }
