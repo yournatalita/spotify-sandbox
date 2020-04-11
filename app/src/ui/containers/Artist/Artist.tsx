@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 import { usePalette } from 'react-palette';
 import classNames from 'classnames';
 
-import { ArtistsProps, ArtistStateProps } from './Artist.d';
+import { ArtistStateProps } from './Artist.d';
 import { StoreInterface } from '../../../store/index.d';
 import { operationsVideo } from '../../../store/models/Video/index';
 
@@ -13,16 +13,8 @@ import styles from './Artist.module.scss';
 
 const VIDEO_PLAYER_DURATION = 20;
 
-const Artist = ({
-  genres,
-  id,
-  images,
-  name,
-  popularity,
-  video,
-  getTopVideo,
-  removeTopVideo
-}: ArtistsProps): JSX.Element => {
+const Artist = ({ artist, video, getTopVideo, removeTopVideo }: ArtistStateProps): JSX.Element => {
+  const { genres, id, images, name, popularity } = artist;
   const [expanded, setExpanded] = useState(false);
   const [videoPlayed, setVideoPlayed] = useState(false);
   const [playerTiming, setPlayerTiming] = useState({
@@ -69,7 +61,7 @@ const Artist = ({
             setExpanded(true);
           }}
           onMouseLeave={(): void => {
-            removeTopVideo();
+            if (removeTopVideo) removeTopVideo();
             setVideoPlayed(false);
             setExpanded(false);
           }}
@@ -130,7 +122,7 @@ const Artist = ({
                     setPlayerTiming({ start, end });
                   }}
                   onError={(): void => {
-                    removeTopVideo();
+                    if (removeTopVideo) removeTopVideo();
                     setVideoPlayed(false);
                   }}
                   onPlay={(): void => {
@@ -139,10 +131,8 @@ const Artist = ({
                     }, 300);
                   }}
                   onEnd={(): void => {
-                    // TODO: remove debugging
-                    console.log('onEnd');
                     setVideoPlayed(false);
-                    removeTopVideo();
+                    if (removeTopVideo) removeTopVideo();
                   }}
                 />
               </div>

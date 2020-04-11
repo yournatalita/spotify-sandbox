@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d2d1db-9602-4045-98a5-7f506f046434" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/models/Video/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Video/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/models/Video/operations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Video/operations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/models/Video/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Video/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/models/Video/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/models/Video/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/Artist/Artist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/ui/containers/ArtistsLists/ArtistsLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/ui/containers/ArtistsLists/ArtistsLists.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,7 @@
       <workItem from="1585153316826" duration="4232000" />
       <workItem from="1586080332225" duration="159000" />
       <workItem from="1586085585285" duration="200000" />
-      <workItem from="1586611458963" duration="426000" />
+      <workItem from="1586611458963" duration="1953000" />
     </task>
     <task id="LOCAL-00001" summary="Init App + SSA">
       <created>1581265993335</created>
@@ -222,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584207035566</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Your Top Artist Youtube Videos Animation Fix">
+      <created>1586612105904</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1586612105904</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,8 +233,8 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/controllers/browse.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/ui/elements/Artist/Artist.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/containers/Sidebar/Sidebar.d.ts" />
+        <option value="$PROJECT_DIR$/src/controllers/videos.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/containers/MainLayout/MainLayout.d.ts" />
         <option value="$PROJECT_DIR$/../nextjs-starter-kit/src/ui/components/User/User.d.ts" />
         <option value="$PROJECT_DIR$/app/src/ui/elements/Radio/Radio.d.ts" />
@@ -241,7 +244,6 @@
         <option value="$PROJECT_DIR$/app/src/ui/components/Slider/Slider.d.ts" />
         <option value="$PROJECT_DIR$/src/controllers/personalization.d.ts" />
         <option value="$PROJECT_DIR$/app/src/store/models/Personalization/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/controllers/videos.d.ts" />
       </list>
     </option>
     <option name="additionalRoots">
@@ -265,7 +267,8 @@
     <MESSAGE value="Your Top Artists restructuring" />
     <MESSAGE value="Your Top Artists Animation" />
     <MESSAGE value="Your Top Artist Youtube Videos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Your Top Artist Youtube Videos" />
+    <MESSAGE value="Your Top Artist Youtube Videos Animation Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Your Top Artist Youtube Videos Animation Fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="239" key="#EditorConfig" timestamp="1581863497295">
@@ -281,10 +284,10 @@
     </state>
     <state x="721" y="231" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1098@0.23.1920.1098" timestamp="1583869487995" />
     <state x="721" y="270" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1102@0.23.1920.1102" timestamp="1581275911503" />
-    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1584207035320">
-      <screen x="0" y="23" width="1920" height="1098" />
+    <state x="541" y="173" key="CommitChangelistDialog2" timestamp="1586612105725">
+      <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614474419" />
+    <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1096@0.23.1920.1096" timestamp="1586612105725" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1098@0.23.1920.1098" timestamp="1584207035320" />
     <state x="541" y="173" key="CommitChangelistDialog2/0.23.1920.1100@0.23.1920.1100" timestamp="1583687958763" />
     <state x="600" y="311" key="RollbackChangesDialog" timestamp="1585158470726">
@@ -296,10 +299,10 @@
     </state>
     <state x="378" y="240" key="SettingsEditor/0.23.1920.1096@0.23.1920.1096" timestamp="1583613993045" />
     <state x="378" y="240" key="SettingsEditor/0.23.1920.1098@0.23.1920.1098" timestamp="1584128189949" />
-    <state x="560" y="312" key="Vcs.Push.Dialog.v2" timestamp="1584207037204">
-      <screen x="0" y="23" width="1920" height="1098" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2" timestamp="1586612109584">
+      <screen x="0" y="23" width="1920" height="1096" />
     </state>
-    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1583614476502" />
+    <state x="560" y="311" key="Vcs.Push.Dialog.v2/0.23.1920.1096@0.23.1920.1096" timestamp="1586612109584" />
     <state x="560" y="312" key="Vcs.Push.Dialog.v2/0.23.1920.1098@0.23.1920.1098" timestamp="1584207037204" />
     <state x="560" y="313" key="Vcs.Push.Dialog.v2/0.23.1920.1100@0.23.1920.1100" timestamp="1583687961657" />
     <state x="141" y="190" width="1427" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581889068082">
