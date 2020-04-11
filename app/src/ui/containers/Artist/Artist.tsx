@@ -11,6 +11,8 @@ import { operationsVideo } from '../../../store/models/Video/index';
 
 import styles from './Artist.module.scss';
 
+const VIDEO_PLAYER_DURATION = 20;
+
 const Artist = ({
   genres,
   id,
@@ -18,10 +20,15 @@ const Artist = ({
   name,
   popularity,
   video,
-  getTopVideo
+  getTopVideo,
+  removeTopVideo
 }: ArtistsProps): JSX.Element => {
   const [expanded, setExpanded] = useState(false);
   const [videoPlayed, setVideoPlayed] = useState(false);
+  const [playerTiming, setPlayerTiming] = useState({
+    start: 0,
+    end: 0
+  });
 
   const { data } = usePalette(images[0].url);
   const topVideo = video && video.top;
@@ -44,8 +51,11 @@ const Artist = ({
           className={classNames(
             styles.root,
             expanded && styles.hovered,
-            expanded && topVideoId && styles.videoShowing,
-            videoPlayed && topVideoId && styles.videoPlayed
+            expanded &&
+              topVideoId &&
+              playerTiming.start !== playerTiming.end &&
+              styles.videoPlaying,
+            videoPlayed && topVideoId && styles.videoShowing
           )}
           style={lightVibrant}
           onMouseEnter={(): void => {
@@ -59,6 +69,7 @@ const Artist = ({
             setExpanded(true);
           }}
           onMouseLeave={(): void => {
+            removeTopVideo();
             setVideoPlayed(false);
             setExpanded(false);
           }}
@@ -88,9 +99,10 @@ const Artist = ({
               )}
             </ul>
             {topVideoId && expanded && (
-              <div className={styles.video}>
+              <div className={classNames(styles.video)}>
+                <span className={styles.videoOverflow} />
                 <YouTube
-                  className={styles.ytWrapper}
+                  className={classNames(styles.ytWrapper)}
                   videoId={topVideoId}
                   opts={{
                     height: '100%',
@@ -101,12 +113,36 @@ const Artist = ({
                       modestbranding: 1,
                       rel: 0,
                       showinfo: 0,
-                      start: 20,
-                      autoplay: 1
+                      start: playerTiming.start,
+                      end: playerTiming.end,
+                      autoplay: playerTiming.start !== playerTiming.end ? 1 : 0
                     }
                   }}
-                  onPlay={() => {
-                    setVideoPlayed(true);
+                  onReady={event => {
+                    const duration = event.target.getDuration();
+                    const videoQuarter = duration / 4;
+                    const start = videoQuarter;
+                    const end =
+                      videoQuarter + VIDEO_PLAYER_DURATION > duration
+                        ? duration
+                        : videoQuarter + VIDEO_PLAYER_DURATION;
+
+                    setPlayerTiming({ start, end });
+                  }}
+                  onError={(): void => {
+                    removeTopVideo();
+                    setVideoPlayed(false);
+                  }}
+                  onPlay={(): void => {
+                    setTimeout(() => {
+                      setVideoPlayed(true);
+                    }, 300);
+                  }}
+                  onEnd={(): void => {
+                    // TODO: remove debugging
+                    console.log('onEnd');
+                    setVideoPlayed(false);
+                    removeTopVideo();
                   }}
                 />
               </div>

@@ -11,4 +11,11 @@ const getTopVideo = (data: Video): IReducerReturn => ({
   }
 });
 
-export { getTopVideo };
+const removeTopVideo = (): IReducerReturn => ({
+  type: types.GET_TOP,
+  payload: {
+    top: null
+  }
+});
+
+export { getTopVideo, removeTopVideo };

@@ -16,6 +16,11 @@ const reducer = (
         ...state,
         ...payload
       };
+    case types.REMOVE_TOP:
+      return {
+        ...state,
+        ...payload
+      };
     default:
       return state;
   }

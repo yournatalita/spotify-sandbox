@@ -20,10 +20,10 @@
       top: 20px;
       left: 20px;
       position: absolute;
-      z-index: 3;
       opacity: 0;
       transform: translate3d(-100%, 0, 0);
-      transition: opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
+      transition: background-color 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out,
+      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
     }
 
     .background {
@@ -38,32 +38,14 @@
       margin: 20px 0 0 0;
       font-size: 42px;
       position: absolute;
-      z-index: 3;
       opacity: 0;
       transform: translate3d(-100%, 0, 0);
-      transition: opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
+      transition: font-size 0.25s ease-in-out, margin-top 0.25s ease-in-out,
+      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
     }
 
     .genres {
       opacity: 0;
-    }
-  }
-
-  &.videoShowing.hover {
-    &::after {
-      content: '';
-      position: absolute;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
-      z-index: 2;
-    }
-
-    .background {
-      //opacity: 0;
     }
   }
 }
@@ -100,6 +82,7 @@
   font-weight: bold;
   margin: 112px 0 0 0;
   transition: font-size 0.25s ease-in-out, margin-top 0.25s ease-in-out;
+  z-index: 3;
 }
 
 .hot {
@@ -107,6 +90,7 @@
   top: 102px;
   left: 72px;
   background-color: var(--darkVibrant);
+  z-index: 3;
   color: $c-white;
   font-weight: bold;
   line-height: 1;
@@ -142,17 +126,6 @@
   bottom: 0;
   right: 0;
   transition: opacity 0.25s ease-in-out;
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    //background: linear-gradient(0deg, var(--lightVibrant), transparent);
-    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
-  }
 }
 
 .backgroundImage {
@@ -170,10 +143,14 @@
   bottom: -120px;
   right: -120px;
   pointer-events: none;
-  transition: opacity 1.25s ease-in-out 0.25s;
+  transition: opacity 1.25s ease-in-out 1.25s;
 
-  .videoPlayed & {
+  .videoPlaying & {
     opacity: 1;
+
+    &::after {
+      opacity: 1;
+    }
   }
 
   > div {

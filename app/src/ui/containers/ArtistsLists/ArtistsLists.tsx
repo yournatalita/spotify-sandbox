@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg';
 
-import Artist from '../../containers/Artist/Artist';
+import Artist from '../Artist/Artist';
 import Button from '../../elements/Button/Button';
 import Slider, { getStyles as getStylesSlider } from '../../components/Slider/Slider';
 import Radio from '../../elements/Radio/Radio';

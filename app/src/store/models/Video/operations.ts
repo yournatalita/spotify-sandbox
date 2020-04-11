@@ -16,4 +16,8 @@ const getTopVideo = (options: IRequest) => (dispatch: Dispatch) => {
     });
 };
 
-export { getTopVideo };
+const removeTopVideo = () => (dispatch: Dispatch) => {
+  dispatch(actions.removeTopVideo());
+};
+
+export { getTopVideo, removeTopVideo };
