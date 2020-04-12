@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import YouTube from 'react-youtube';
 import { usePalette } from 'react-palette';
+import hexRgb from 'hex-rgb';
 import classNames from 'classnames';
 
 import { ArtistStateProps, DispatchProps, StateProps } from './Artist.d';
@@ -11,7 +12,16 @@ import { operationsVideo } from '../../../store/models/Video/index';
 
 import styles from './Artist.module.scss';
 
-const VIDEO_PLAYER_DURATION = 20;
+const VIDEO_PLAYER_DURATION = 60;
+
+const getRgb = (hex?: string): string | undefined => {
+  if (hex) {
+    const array = hexRgb(hex, { format: 'array' });
+    return `${array[0]}, ${array[1]}, ${array[2]}`;
+  }
+
+  return undefined;
+};
 
 const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
   artist,
@@ -32,13 +42,24 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
   const topVideoId =
     topVideo &&
     topVideo.sources &&
+    topVideo.sources.find((item: any) => item.source === 'youtube') &&
     topVideo.sources.find((item: any) => item.source === 'youtube').source_data;
+  const songTitle = video && video.top && video.top.song_title;
+  const year = video && video.top && video.top.year;
 
   const darkVibrant = {
-    '--darkVibrant': data.darkVibrant || data.darkMuted || data.muted || data.vibrant
+    '--darkVibrant':
+      getRgb(data.darkVibrant) ||
+      getRgb(data.darkMuted) ||
+      getRgb(data.muted) ||
+      getRgb(data.vibrant)
   } as React.CSSProperties;
   const lightVibrant = {
-    '--lightVibrant': data.lightVibrant || data.lightMuted || data.muted || data.vibrant
+    '--lightVibrant':
+      getRgb(data.lightVibrant) ||
+      getRgb(data.lightMuted) ||
+      getRgb(data.muted) ||
+      getRgb(data.vibrant)
   } as React.CSSProperties;
 
   return (
@@ -82,6 +103,10 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
               />
             </div>
             <div className={styles.name}>{name}</div>
+            <div className={styles.songTitle}>
+              {topVideoId && expanded && songTitle}{' '}
+              {topVideoId && expanded && year && <span>({year})</span>}
+            </div>
             {popularity > 80 && <div className={styles.hot}>trending</div>}
             <ul className={styles.genres}>
               {genres.map(
@@ -95,6 +120,8 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
                 }
               )}
             </ul>
+          </div>
+          <div className={styles.background}>
             {topVideoId && expanded && (
               <div className={classNames(styles.video)}>
                 <span className={styles.videoOverflow} />
@@ -131,9 +158,7 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
                     setVideoPlayed(false);
                   }}
                   onPlay={(): void => {
-                    setTimeout(() => {
-                      setVideoPlayed(true);
-                    }, 300);
+                    setVideoPlayed(true);
                   }}
                   onEnd={(): void => {
                     setVideoPlayed(false);
@@ -142,8 +167,6 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
                 />
               </div>
             )}
-          </div>
-          <div className={styles.background}>
             <img
               className={styles.backgroundImage}
               alt={name}

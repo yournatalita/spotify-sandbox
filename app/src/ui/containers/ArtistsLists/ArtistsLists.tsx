@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+import { set } from 'idb-keyval';
 
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg';
 
@@ -20,6 +21,8 @@ import styles from './ArtistsLists.module.scss';
 
 import { operationsPersonalization } from '../../../store/models/Personalization';
 import { operationsVideo } from '../../../store/models/Video/index';
+
+const PREFIX = 'ArtistsLists';
 
 const getArtistsTerm = ({ getPersonalization, term }: ChangeTermEvent) => {
   getPersonalization &&
@@ -56,6 +59,10 @@ const getArrow = (_value: TSliderRenderProps, type: string): JSX.Element => {
   );
 };
 
+const setTermDB = (term: string): void => {
+  set(`${PREFIX}_term`, term);
+};
+
 const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
   const { artists, getPersonalization, setRangeChosenArtists } = props;
   const { checkedRange } = artists || {};
@@ -76,6 +83,8 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               } else if (setRangeChosenArtists) {
                 setRangeChosenArtists('short_term');
               }
+
+              setTermDB('short_term');
             }}
           >
             <span>Recent</span>
@@ -93,6 +102,8 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               } else if (setRangeChosenArtists) {
                 setRangeChosenArtists('medium_term');
               }
+
+              setTermDB('medium_term');
             }}
           >
             <span>6 months</span>
@@ -110,6 +121,8 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               } else if (setRangeChosenArtists) {
                 setRangeChosenArtists('long_term');
               }
+
+              setTermDB('long_term');
             }}
           >
             <span>Past year</span>
@@ -140,7 +153,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               items.length &&
               items.map((artist: ArtistsProps) => (
                 <div key={artist.id} className={styles.item}>
-                  <Artist {...artist} />
+                  <Artist artist={artist} />
                 </div>
               ))}
           </Slider>

@@ -3,7 +3,7 @@
 .root {
   display: flex;
   position: relative;
-  background-color: var(--lightVibrant);
+  background-color: rgba(var(--lightVibrant), 1);
   width: 385px;
   height: 250px;
   border-radius: 8px;
@@ -14,39 +14,6 @@
   &.hovered {
     width: 600px;
     height: 338px;
-
-    .hot {
-      background-color: $c-red;
-      top: 20px;
-      left: 20px;
-      position: absolute;
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-      transition: background-color 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out,
-      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
-    }
-
-    .background {
-      opacity: 1;
-    }
-
-    .imageIcon {
-      opacity: 0;
-    }
-
-    .name {
-      margin: 20px 0 0 0;
-      font-size: 42px;
-      position: absolute;
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-      transition: font-size 0.25s ease-in-out, margin-top 0.25s ease-in-out,
-      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
-    }
-
-    .genres {
-      opacity: 0;
-    }
   }
 }
 
@@ -64,6 +31,10 @@
   width: 92px;
   height: 92px;
   transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+  .hovered & {
+    opacity: 0;
+  }
 }
 
 .image {
@@ -81,24 +52,76 @@
   line-height: 1.2;
   font-weight: bold;
   margin: 112px 0 0 0;
+  opacity: 1;
+  transform: none;
   transition: font-size 0.25s ease-in-out, margin-top 0.25s ease-in-out;
   z-index: 3;
+
+  .hovered & {
+    margin: 20px 0 0 0;
+    font-size: 42px;
+    position: absolute;
+  }
+
+  .videoShowing & {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: font-size 0.25s ease-in-out, margin-top 0.25s ease-in-out,
+      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
+  }
+}
+
+.songTitle {
+  position: absolute;
+  color: $c-white;
+  font-size: 20px;
+  line-height: 1.2;
+  opacity: 0;
+  font-weight: bold;
+  top: 90px;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 3;
+  transform: none;
+
+  .videoShowing & {
+    opacity: 1;
+    color: transparent;
+    transform: translate3d(-100%, 0, 0);
+    transition: opacity 0.25s ease-in-out 1.25s, transform 0.25s ease-in-out 15s,
+      color 0.25s ease-in-out 15s;
+  }
 }
 
 .hot {
   position: absolute;
   top: 102px;
   left: 72px;
-  background-color: var(--darkVibrant);
+  background-color: rgba(var(--darkVibrant), 1);
   z-index: 3;
   color: $c-white;
   font-weight: bold;
   line-height: 1;
+  opacity: 1;
+  transform: none;
   padding: 3px 5px 2px;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: 12px;
   transition: background-color 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out;
+
+  .hovered & {
+    background-color: $c-red;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+  }
+
+  .videoShowing & {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: background-color 0.25s ease-in-out, left 0.25s ease-in-out, top 0.25s ease-in-out,
+      opacity 0.55s ease-in-out 15s, transform 0.55s ease-in-out 15s;
+  }
 }
 
 .genres {
@@ -108,6 +131,10 @@
   margin: 10px 0 0 0;
   list-style: none;
   transition: opacity 0.25s ease-in-out;
+
+  .hovered & {
+    opacity: 0;
+  }
 }
 
 .itemGenre {
@@ -126,31 +153,67 @@
   bottom: 0;
   right: 0;
   transition: opacity 0.25s ease-in-out;
+  z-index: 0;
+
+  &:before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    left: -80%;
+    top: -80%;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, rgba(var(--lightVibrant), 1) 0%, rgba(var(--lightVibrant), 0) 100%);
+    background-size: 100%;
+    z-index: 1;
+
+    .hovered & {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .videoShowing & {
+      opacity: 0;
+      transition: opacity 0.75s ease-in-out 15s;
+    }
+  }
+
+  .hovered & {
+    opacity: 1;
+  }
 }
 
 .backgroundImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out 0s;
+
+  .hovered & {
+    opacity: 1;
+  }
+
+  .videoShowing & {
+    opacity: 0;
+    transition: opacity 1.25s ease-in-out 0.5s;
+  }
 }
+
+$video-overflow: 140px;
 
 .video {
   opacity: 0;
   position: absolute;
-  top: -120px;
-  left: -120px;
-  bottom: -120px;
-  right: -120px;
+  top: -$video-overflow;
+  left: -$video-overflow;
+  bottom: -$video-overflow;
+  right: -$video-overflow;
   pointer-events: none;
-  transition: opacity 1.25s ease-in-out 1.25s;
 
-  .videoPlaying & {
+  .videoShowing & {
     opacity: 1;
-
-    &::after {
-      opacity: 1;
-    }
+    transition: opacity 0.25s ease-in-out 0.5s;
   }
 
   > div {

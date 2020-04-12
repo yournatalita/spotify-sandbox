@@ -10,7 +10,7 @@ type TPersonalizationOptions = {
 type TPersonalizationParams = {
   limit?: string;
   offset?: number;
-  time_range?: 'long_term' | 'medium_term' | 'medium_term';
+  time_range?: 'long_term' | 'medium_term' | 'short_term';
 };
 
 type TPersonalization = {

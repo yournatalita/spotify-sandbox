@@ -9,6 +9,7 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
   axios(options)
     .then(response => {
       const { data } = response;
+
       if (data && data.items && data.items[0].type === 'artist') {
         dispatch(
           actions.getPersonalizationArtists({
@@ -28,7 +29,7 @@ const getPersonalization = (options: IRequest) => (dispatch: Dispatch) => {
     .catch(e => {
       if (e && e.response && e.response.status === 401) {
         // TODO: remove debugging
-        console.log('here');
+        console.log('getPersonalization: Error');
       }
       console.error(e);
     });
