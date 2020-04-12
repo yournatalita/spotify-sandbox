@@ -9,11 +9,12 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out,
-    margin 0.25s ease-in-out;
+    margin 0.25s ease-in-out, box-shadow .25s ease-in-out;
 
   &.hovered {
     width: 600px;
     height: 338px;
+    box-shadow: -2px 20px 30px 0px rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   }
 }
 

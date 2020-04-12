@@ -9,7 +9,8 @@ const Button = ({
   type = 'button',
   themes = ['green', 'uppercase'],
   mix,
-  children
+  children,
+  externalStyles
 }: ButtonProps): JSX.Element => {
   return (
     <button
@@ -20,6 +21,7 @@ const Button = ({
           (classes: string, theme: string) => (classes += `${styles[`theme-${theme}`]} `),
           ' '
         ),
+        externalStyles && externalStyles.root,
         'js-focus-visible',
         mix
       )}

@@ -16,6 +16,7 @@ export interface StateProps {
 export interface ArtistStateProps {
   artist: SpotifyApi.SingleArtistResponse;
   video?: Video;
+  onHover: () => void;
 }
 
 export interface DispatchProps {

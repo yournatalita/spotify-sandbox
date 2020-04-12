@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { set } from 'idb-keyval';
 
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg';
+import { SwiperInstance } from 'react-id-swiper';
 
 import Artist from '../Artist/Artist';
 import Button from '../../elements/Button/Button';
@@ -67,6 +68,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
   const { artists, getPersonalization, setRangeChosenArtists } = props;
   const { checkedRange } = artists || {};
   const { items } = artists[checkedRange] || {};
+  let swiperInstance: SwiperInstance;
 
   return (
     <div className={styles.root}>
@@ -143,6 +145,9 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
                 nextEl: '.js-swiper-next',
                 prevEl: '.js-swiper-prev'
               },
+              getSwiper: (swiper): void => {
+                swiperInstance = swiper;
+              },
               renderPrevButton: (renderProps: TSliderRenderProps): JSX.Element =>
                 getArrow(renderProps, 'prev'),
               renderNextButton: (renderProps: TSliderRenderProps): JSX.Element =>
@@ -153,7 +158,12 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
               items.length &&
               items.map((artist: ArtistsProps) => (
                 <div key={artist.id} className={styles.item}>
-                  <Artist artist={artist} />
+                  <Artist
+                    artist={artist}
+                    onHover={(): void => {
+                      if (swiperInstance) swiperInstance.update();
+                    }}
+                  />
                 </div>
               ))}
           </Slider>

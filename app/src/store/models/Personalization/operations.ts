@@ -39,4 +39,8 @@ const setRangeChosenArtists = (range: string) => (dispatch: Dispatch) => {
   dispatch(actions.setArtistsChosen(range));
 };
 
-export { getPersonalization, setRangeChosenArtists };
+const setRangeChosenTracks = (range: string) => (dispatch: Dispatch) => {
+  dispatch(actions.setTracksChosen(range));
+};
+
+export { getPersonalization, setRangeChosenArtists, setRangeChosenTracks };

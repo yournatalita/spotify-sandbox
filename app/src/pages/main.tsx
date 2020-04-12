@@ -14,17 +14,14 @@ const getTermDB = (key: string): Promise<string> => {
 
 const Main = ({ getPersonalization }: MainProps): JSX.Element => {
   useEffect(() => {
-    let term = '';
+    let termArtist = '';
+    let termTracks = '';
 
     getTermDB('ArtistsLists_term')
       .then((value): void => {
-        // TODO: remove debugging
-        console.log('then', term, value);
-        term = value || 'short_term';
+        termArtist = value || 'short_term';
       })
       .finally(() => {
-        // TODO: remove debugging
-        console.log(term);
         getPersonalization({
           url: '/api/personalization',
           method: 'get',
@@ -32,9 +29,16 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
             typePath: 'artists',
             limit: 30,
             offset: 0,
-            time_range: term || 'short_term'
+            time_range: termArtist || 'short_term'
           }
         });
+      });
+
+    getTermDB('TracksLists_term')
+      .then(value => {
+        termTracks = value || 'short_term';
+      })
+      .finally(() => {
         getPersonalization({
           url: '/api/personalization',
           method: 'get',
@@ -42,7 +46,7 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
             typePath: 'tracks',
             limit: 30,
             offset: 0,
-            time_range: term || 'short_term'
+            time_range: termTracks || 'short_term'
           }
         });
       });

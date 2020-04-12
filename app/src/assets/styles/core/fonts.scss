@@ -13,3 +13,76 @@
   font-weight: 700;
   src: local("Proxima Nova"), url("../../fonts/ProximaNova-Bold.woff") format("woff");
 }
+
+/* ------------------------ */
+
+@font-face {
+  font-family: "Circular";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/CircularSpUIv3T-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/CircularSpUIv3T-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../fonts/CircularSpUIv3T-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../fonts/CircularSpUIv3T-Black.woff2") format("woff2");
+}
+
+
+/* ------------------------ */
+
+@font-face {
+  font-family: "Circular-Cyr";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/CircularSpUICyrOnly-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular-Cyr";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/CircularSpUICyrOnly-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular-Cyr";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../fonts/CircularSpUICyrOnly-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Circular-Cyr";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../fonts/CircularSpUICyrOnly-Black.woff2") format("woff2");
+}
+
+
+
+

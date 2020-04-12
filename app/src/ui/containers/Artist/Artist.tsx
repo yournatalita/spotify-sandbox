@@ -27,7 +27,8 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
   artist,
   video,
   getTopVideo,
-  removeTopVideo
+  removeTopVideo,
+  onHover
 }) => {
   const { genres, id, images, name, popularity } = artist;
   const [expanded, setExpanded] = useState(false);
@@ -84,11 +85,14 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
                 params: { q: name }
               });
             }
+
+            onHover();
             setExpanded(true);
           }}
           onMouseLeave={(): void => {
             if (removeTopVideo) removeTopVideo();
             setVideoPlayed(false);
+            onHover();
             setExpanded(false);
           }}
         >

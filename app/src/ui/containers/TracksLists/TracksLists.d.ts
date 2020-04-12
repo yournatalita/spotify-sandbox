@@ -1,3 +1,5 @@
+/// <reference types="spotify-api" />
+
 import { Personalization } from '../../../store/index.d';
 import { IRequest } from '../../../store/models/declarations';
 import { ReactIdSwiperProps } from 'react-id-swiper';
@@ -7,10 +9,12 @@ type TSliderRenderProps = ReactIdSwiperProps;
 
 export interface TracksListsProps extends Personalization {
   getPersonalization?: TPersonalizationRequest;
-  setRangeChosenArtists?: (range: string) => {};
+  setRangeChosenTracks?: (range: string) => {};
 }
 
 export interface ChangeTermEvent {
   getPersonalization?: TPersonalizationRequest;
   term?: string;
 }
+
+export type TTrack = SpotifyApi.SingleTrackResponse;

@@ -2,6 +2,17 @@
   display: flex;
   flex-flow: column;
   width: 100%;
+
+  :global {
+    .swiper-container {
+      min-height: auto;
+      height: 400px;
+    }
+
+    .swiper-wrapper {
+      padding-right: 40px;
+    }
+  }
 }
 
 .filter {
@@ -22,15 +33,19 @@
 
 .item {
   width: 385px;
-  height: 250px;
+  height: 132px;
   margin-top: 20px;
 
-  &:first-child {
-    margin-left: 40px;
+  &:nth-last-child(1) {
+    > div {
+      margin-right: 40px;
+    }
   }
 
-  &:last-child {
-    margin-right: 40px;
+  &:nth-last-child(2) {
+    > div {
+      margin-right: 40px;
+    }
   }
 }
 
