@@ -12,7 +12,7 @@ import { MainProps } from '../../../pages/main.d';
 import { TracksListsProps, TSliderRenderProps, TTrack, ChangeTermEvent } from './TracksLists.d';
 import styles from './TracksLists.module.scss';
 import { operationsPersonalization } from '../../../store/models/Personalization';
-import Track from '../../elements/Track/Track';
+import Track from '../../components/Track/Track';
 import Radio from '../../elements/Radio/Radio';
 
 const getTracksTerm = ({ getPersonalization, term }: ChangeTermEvent) => {

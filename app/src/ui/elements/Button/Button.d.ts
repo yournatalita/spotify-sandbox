@@ -9,4 +9,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<T> {
   children?: JSX.Element;
   mix?: string;
   externalStyles?: TClassNames;
+  ariaLabel?: string;
 }

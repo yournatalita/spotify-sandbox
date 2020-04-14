@@ -8,6 +8,7 @@ const Button = ({
   text,
   type = 'button',
   themes = ['green', 'uppercase'],
+  ariaLabel,
   mix,
   children,
   externalStyles
@@ -25,6 +26,7 @@ const Button = ({
         'js-focus-visible',
         mix
       )}
+      aria-label={ariaLabel}
     >
       {text || children}
     </button>

@@ -1,0 +1,43 @@
+@import 'src/assets/styles/services';
+
+.root {
+
+}
+
+.tooltip {
+
+  &.theme-dark {
+    padding: 13px 20px;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    background-color: rgba(32,32,32,0.8);
+    border-radius: 4px;
+    color: $c-white;
+  }
+
+  &.theme-default {
+    padding: 16px 40px 16px 21px;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    background-color: $c-white;
+    border-radius: 4px;
+    color: $c-black;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1), 0 2px 4px 0 rgba(0,0,0,0.1);
+  }
+
+  &.content-default {
+    max-width: 400px;
+  }
+}
+
+.header {
+
+}
+
+.close {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+
