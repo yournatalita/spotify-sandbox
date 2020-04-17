@@ -167,6 +167,7 @@
     background: radial-gradient(circle, rgba(var(--lightVibrant), 1) 0%, rgba(var(--lightVibrant), 0) 100%);
     background-size: 100%;
     z-index: 1;
+    transition: opacity 0.25s ease-in-out;
 
     .hovered & {
       opacity: 1;

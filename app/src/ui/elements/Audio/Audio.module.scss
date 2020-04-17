@@ -1,0 +1,28 @@
+@import 'src/assets/styles/services';
+
+.track {
+  background-color: rgba(var(--darkMuted), 1);
+  position: absolute;
+  left: 40px;
+  right: 10px;
+  bottom: 11px;
+  height: 5px;
+}
+
+.trackProgress {
+  position: relative;
+  background-color: rgba(var(--lightMuted), 1);
+  height: 100%;
+  z-index: 2;
+  transition: width 0.15s linear;
+}
+
+.time {
+  position: absolute;
+  color: $s-white;
+  opacity: 0.5;
+  font-size: $font-size-xxs;
+  right: 0;
+  bottom: 8px;
+  font-weight: 600;
+}

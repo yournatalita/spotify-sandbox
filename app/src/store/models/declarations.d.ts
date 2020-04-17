@@ -8,3 +8,4 @@ export type IReducerReturn = {
   type: string;
   payload: object;
 };
+

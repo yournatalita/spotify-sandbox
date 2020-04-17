@@ -65,7 +65,7 @@
   }
 }
 
-.play {
+.play, .playActive {
   display: flex;
   justify-content: center;
   padding: 0;
@@ -94,6 +94,11 @@
     width: 20px;
     height: 20px;
   }
+}
+
+.playActive {
+  opacity: 1;
+  color: $c-white;
 }
 
 .info {
@@ -150,6 +155,7 @@
 .noPreview {
   color: $c-gray;
   position: relative;
+  margin-top: 7px;
 }
 
 .noPreviewIcon {

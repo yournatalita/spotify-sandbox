@@ -67,115 +67,125 @@ const setTermDB = (term: string): void => {
 const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
   const { artists, getPersonalization, setRangeChosenArtists } = props;
   const { checkedRange } = artists || {};
-  const { items } = artists[checkedRange] || {};
+  const { items } = (artists && artists[checkedRange || '']) || {};
   let swiperInstance: SwiperInstance;
 
+  const getSlides = (): JSX.Element[] | undefined => {
+    if (items && items.length > 0) {
+      return items.map((artist: ArtistsProps) => (
+        <div key={artist.id} className={styles.item}>
+          <Artist
+            artist={artist}
+            onHover={(): void => {
+              if (swiperInstance) swiperInstance.update();
+            }}
+          />
+        </div>
+      ));
+    }
+
+    return undefined;
+  };
+
   return (
-    <div className={styles.root}>
-      <div className={styles.filter}>
-        <div className={styles.filterItem}>
-          <Radio
-            name={'artists'}
-            value={'short_term'}
-            checked={checkedRange === 'short_term'}
-            themes={['underlined', 'uppercase', 'whiteText']}
-            onChange={(): void => {
-              if (!artists['short_term']) {
-                getArtistsTerm({ getPersonalization, ...{ term: 'short_term' } });
-              } else if (setRangeChosenArtists) {
-                setRangeChosenArtists('short_term');
-              }
+    <>
+      {artists && (
+        <div className={styles.root}>
+          <div className={styles.filter}>
+            <div className={styles.filterItem}>
+              <Radio
+                name={'artists'}
+                value={'short_term'}
+                checked={checkedRange === 'short_term'}
+                themes={['underlined', 'uppercase', 'whiteText']}
+                onChange={(): void => {
+                  if (!artists['short_term']) {
+                    getArtistsTerm({ getPersonalization, ...{ term: 'short_term' } });
+                  } else if (setRangeChosenArtists) {
+                    setRangeChosenArtists('short_term');
+                  }
 
-              setTermDB('short_term');
-            }}
-          >
-            <span>Recent</span>
-          </Radio>
-        </div>
-        <div className={styles.filterItem}>
-          <Radio
-            name={'artists'}
-            value={'medium_term'}
-            checked={checkedRange === 'medium_term'}
-            themes={['underlined', 'uppercase', 'whiteText']}
-            onChange={(): void => {
-              if (!artists['medium_term']) {
-                getArtistsTerm({ getPersonalization, ...{ term: 'medium_term' } });
-              } else if (setRangeChosenArtists) {
-                setRangeChosenArtists('medium_term');
-              }
+                  setTermDB('short_term');
+                }}
+              >
+                <span>Recent</span>
+              </Radio>
+            </div>
+            <div className={styles.filterItem}>
+              <Radio
+                name={'artists'}
+                value={'medium_term'}
+                checked={checkedRange === 'medium_term'}
+                themes={['underlined', 'uppercase', 'whiteText']}
+                onChange={(): void => {
+                  if (!artists['medium_term']) {
+                    getArtistsTerm({ getPersonalization, ...{ term: 'medium_term' } });
+                  } else if (setRangeChosenArtists) {
+                    setRangeChosenArtists('medium_term');
+                  }
 
-              setTermDB('medium_term');
-            }}
-          >
-            <span>6 months</span>
-          </Radio>
-        </div>
-        <div className={styles.filterItem}>
-          <Radio
-            name={'artists'}
-            value={'long_term'}
-            checked={checkedRange === 'long_term'}
-            themes={['underlined', 'uppercase', 'whiteText']}
-            onChange={(): void => {
-              if (!artists['long_term']) {
-                getArtistsTerm({ getPersonalization, ...{ term: 'long_term' } });
-              } else if (setRangeChosenArtists) {
-                setRangeChosenArtists('long_term');
-              }
+                  setTermDB('medium_term');
+                }}
+              >
+                <span>6 months</span>
+              </Radio>
+            </div>
+            <div className={styles.filterItem}>
+              <Radio
+                name={'artists'}
+                value={'long_term'}
+                checked={checkedRange === 'long_term'}
+                themes={['underlined', 'uppercase', 'whiteText']}
+                onChange={(): void => {
+                  if (!artists['long_term']) {
+                    getArtistsTerm({ getPersonalization, ...{ term: 'long_term' } });
+                  } else if (setRangeChosenArtists) {
+                    setRangeChosenArtists('long_term');
+                  }
 
-              setTermDB('long_term');
-            }}
-          >
-            <span>Past year</span>
-          </Radio>
+                  setTermDB('long_term');
+                }}
+              >
+                <span>Past year</span>
+              </Radio>
+            </div>
+          </div>
+          <div className={styles.list}>
+            {items && items.length && (
+              <Slider
+                params={{
+                  direction: 'horizontal',
+                  slidesPerView: 'auto',
+                  spaceBetween: 20,
+                  freeMode: true,
+                  mousewheel: true,
+                  rebuildOnUpdate: true,
+                  navigation: {
+                    nextEl: '.js-swiper-next',
+                    prevEl: '.js-swiper-prev'
+                  },
+                  getSwiper: (swiper): void => {
+                    swiperInstance = swiper;
+                  },
+                  renderPrevButton: (renderProps: TSliderRenderProps): JSX.Element =>
+                    getArrow(renderProps, 'prev'),
+                  renderNextButton: (renderProps: TSliderRenderProps): JSX.Element =>
+                    getArrow(renderProps, 'next')
+                }}
+              >
+                {getSlides()}
+              </Slider>
+            )}
+          </div>
         </div>
-      </div>
-      <div className={styles.list}>
-        {items && items.length && (
-          <Slider
-            params={{
-              direction: 'horizontal',
-              slidesPerView: 'auto',
-              spaceBetween: 20,
-              freeMode: true,
-              mousewheel: true,
-              rebuildOnUpdate: true,
-              navigation: {
-                nextEl: '.js-swiper-next',
-                prevEl: '.js-swiper-prev'
-              },
-              getSwiper: (swiper): void => {
-                swiperInstance = swiper;
-              },
-              renderPrevButton: (renderProps: TSliderRenderProps): JSX.Element =>
-                getArrow(renderProps, 'prev'),
-              renderNextButton: (renderProps: TSliderRenderProps): JSX.Element =>
-                getArrow(renderProps, 'next')
-            }}
-          >
-            {items &&
-              items.length &&
-              items.map((artist: ArtistsProps) => (
-                <div key={artist.id} className={styles.item}>
-                  <Artist
-                    artist={artist}
-                    onHover={(): void => {
-                      if (swiperInstance) swiperInstance.update();
-                    }}
-                  />
-                </div>
-              ))}
-          </Slider>
-        )}
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
 const mapStateToProps = (state: MainProps): ArtistsListProps => {
   return {
-    artists: state && state.personalization ? state.personalization.artists : {}
+    artists: state && state.personalization && state.personalization.artists
   };
 };
 

@@ -11,7 +11,8 @@ const Button = ({
   ariaLabel,
   mix,
   children,
-  externalStyles
+  externalStyles,
+  ...rest
 }: ButtonProps): JSX.Element => {
   return (
     <button
@@ -27,6 +28,7 @@ const Button = ({
         mix
       )}
       aria-label={ariaLabel}
+      {...rest}
     >
       {text || children}
     </button>

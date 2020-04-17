@@ -10,7 +10,6 @@ const reducer = (
   state: PersonalizationReducerState = INITIAL_STATE,
   { type, payload }: TReducerReturn
 ) => {
-
   switch (type) {
     case types.ARTISTS:
       return {

@@ -1,21 +1,25 @@
 import { BrowserHistoryBuildOptions } from 'history';
-// @ts-ignore
-import { SpotifyApi } from '@types/spotify-api';
+/// <reference types="spotify-api" />
 
 type Router = {
   location?: BrowserHistoryBuildOptions;
   action?: string;
+};
+
+export interface PersonalizationItem<T> {
+  short_term?: SpotifyApi.CursorBasedPagingObject<T>;
+  short_term?: SpotifyApi.CursorBasedPagingObject<T>;
+  medium_term?: SpotifyApi.CursorBasedPagingObject<T>;
+  checkedRange: string;
 }
 
-type PersinalizationItem =  {
-  short_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
-  long_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
-  medium_term?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
+export interface DataPropsPersonalization {
+  artists?: PersinalizationItem<SpotifyApi.ArtistObjectFull>;
+  tracks?: PersinalizationItem<SpotifyApi.TrackObjectFull>;
 }
 
-export interface Personalization {
-  artists?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.ArtistObjectFull>;
-  tracks?: SpotifyApi.CursorBasedPagingObject<SpotifyApi.TrackObjectFull>;
+export interface Personalization extends DataPropsPersonalization {
+  type?: string;
 }
 
 interface VideoBlockInterface {
@@ -44,8 +48,13 @@ export interface Video {
   top?: VideoBlockInterface | null;
 }
 
+export interface Global {
+  playedTrackId?: string;
+}
+
 export interface StoreInterface {
   router?: Router;
   personalization?: Personalization;
   video?: Video;
+  global?: Global;
 }

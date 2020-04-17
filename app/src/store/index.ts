@@ -7,6 +7,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import personalization from '../store/models/Personalization';
 import browse from '../store/models/Browse';
 import video from '../store/models/Video';
+import global from '../store/models/Global';
 
 export const history = createBrowserHistory();
 const enhancers = [];
@@ -23,6 +24,7 @@ const reducers = combineReducers({
   personalization,
   browse,
   video,
+  global,
   router: connectRouter(history)
 });
 

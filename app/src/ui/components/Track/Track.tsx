@@ -1,28 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { usePalette } from 'react-palette';
+import hexRgb from 'hex-rgb';
 
 import { TTrack } from './Track.d';
 import { ReactComponent as IconPlay } from '../../../assets/icons/play.svg';
 import { ReactComponent as IconNoMusic } from '../../../assets/icons/no-music.svg';
+import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
 
+import Audio from '../../elements/Audio/Audio';
 import Tooltip from '../../elements/Tooltip/Tooltip';
 import Button from '../../elements/Button/Button';
 
 import styles from './Track.module.scss';
 
-const Track = ({ track }: TTrack): JSX.Element => {
-  const [hovered, setHovered] = useState(false);
-  const { name, artists, album, explicit, preview_url } = track;
+const getRgb = (hex?: string): string | undefined => {
+  if (hex) {
+    const array = hexRgb(hex, { format: 'array' });
+    return `${array[0]}, ${array[1]}, ${array[2]}`;
+  }
+
+  return undefined;
+};
+
+const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element => {
+  const { id, name, artists, album, explicit, preview_url } = track;
+  let audioRef: HTMLAudioElement | null = null;
+
+  const dataColors = usePalette(album.images[1].url).data;
+  const darkMuted = {
+    '--darkMuted':
+      getRgb(dataColors.darkMuted) ||
+      getRgb(dataColors.muted) ||
+      getRgb(dataColors.darkVibrant) ||
+      getRgb(dataColors.vibrant)
+  } as React.CSSProperties;
+  const lightMuted = {
+    '--lightMuted':
+      getRgb(dataColors.lightMuted) ||
+      getRgb(dataColors.lightVibrant) ||
+      getRgb(dataColors.muted) ||
+      getRgb(dataColors.vibrant)
+  } as React.CSSProperties;
 
   return (
-    <div
-      className={styles.root}
-      onMouseEnter={(): void => {
-        setHovered(true);
-      }}
-      onMouseLeave={(): void => {
-        setHovered(false);
-      }}
-    >
+    <div className={styles.root}>
       <div className={styles.container}>
         <div className={styles.image}>
           <img
@@ -72,22 +93,34 @@ const Track = ({ track }: TTrack): JSX.Element => {
           <div className={styles.preview}>
             <Button
               externalStyles={{
-                root: styles.play
+                root: playedTrackId === id ? styles.playActive : styles.play
               }}
               themes={['black']}
               type="button"
+              onClick={(): void => {
+                if (audioRef && playedTrackId !== id) {
+                  audioRef.play().then(() => {
+                    onPlay(id);
+                  });
+                } else if (audioRef) {
+                  audioRef.pause();
+                  onPause();
+                }
+              }}
             >
-              <IconPlay />
+              {playedTrackId !== id && <IconPlay />}
+              {playedTrackId === id && <IconStop />}
             </Button>
-            {preview_url && hovered && (
-              <audio
+            {preview_url && (
+              <Audio
                 src={preview_url}
-                autoPlay={true}
-                onPlay={e => {
-                  console.log(e.currentTarget.duration);
+                autoPlay={false}
+                onRefInit={(audio): void => {
+                  audioRef = audio;
                 }}
-                onTimeUpdate={e => {
-                  console.log(e.currentTarget.currentTime);
+                cssColors={{
+                  darkMuted,
+                  lightMuted
                 }}
               />
             )}
