@@ -11,7 +11,9 @@ import styles from './Player.module.scss';
 import { MainProps } from '../../../pages/main.d';
 import { StateProps, DispatchProps, SpotifyPlayerProps } from './Player.d';
 
-const setPlayerListeners = (player: SpotifyPlayerProps): void => {
+const setPlayerListeners = (player: SpotifyPlayerProps, dispatchProps: DispatchProps): void => {
+  const { setDeviceId } = dispatchProps;
+
   player.addListener('initialization_error', ({ message }) => {
     console.error(message);
   });
@@ -29,13 +31,19 @@ const setPlayerListeners = (player: SpotifyPlayerProps): void => {
   });
   player.addListener('ready', ({ device_id }) => {
     console.log('Ready with Device ID', device_id);
+
+    setDeviceId(device_id);
   });
   player.addListener('not_ready', ({ device_id }) => {
     console.log('Device ID has gone offline', device_id);
   });
 };
 
-const initWebPlayback = (player: SpotifyPlayerProps, token: string): void => {
+const initWebPlayback = (
+  player: SpotifyPlayerProps,
+  token: string,
+  dispatchProps: DispatchProps
+): void => {
   (window as any).onSpotifyWebPlaybackSDKReady = (): void => {
     player = new (window as any).Spotify.Player({
       name: 'Spotify Sandbox Test',
@@ -44,19 +52,19 @@ const initWebPlayback = (player: SpotifyPlayerProps, token: string): void => {
       }
     });
 
-    setPlayerListeners(player);
+    setPlayerListeners(player, dispatchProps);
 
     player.connect();
   };
 };
 
 const Player: FunctionComponent<StateProps & DispatchProps> = props => {
-  const { getToken } = props;
+  const { getToken, setDeviceId, setPlayedTrackId } = props;
   let player: SpotifyPlayerProps;
 
   if (getToken) {
     getToken().then((token: string) => {
-      initWebPlayback(player, token);
+      initWebPlayback(player, token, { setDeviceId, setPlayedTrackId });
     });
   }
 

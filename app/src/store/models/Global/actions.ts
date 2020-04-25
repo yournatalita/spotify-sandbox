@@ -11,4 +11,13 @@ const setPlayedTrackIdAction = (data: DataProps): IReducerReturn => {
   };
 };
 
-export { setPlayedTrackIdAction };
+const setDeviceIdAction = (data: DataProps): IReducerReturn => {
+  return {
+    type: types.DEVICE_ID,
+    payload: {
+      ...data
+    }
+  };
+};
+
+export { setPlayedTrackIdAction, setDeviceIdAction };

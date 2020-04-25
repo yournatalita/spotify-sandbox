@@ -12,6 +12,10 @@ const reducer = (state: GlobalReducerState = INITIAL_STATE, { type, payload }: T
       return {
         ...payload
       };
+    case types.DEVICE_ID:
+      return {
+        ...payload
+      };
     default:
       return state;
   }

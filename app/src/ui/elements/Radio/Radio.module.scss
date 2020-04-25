@@ -10,6 +10,32 @@
     &-underlined {
       margin: 0 -5px;
 
+      &:hover {
+        .text {
+          color: $c-white;
+          opacity: 1;
+        }
+      }
+
+      &.checked {
+        .text {
+          color: $c-white;
+          opacity: 1;
+
+          &:before {
+            content: '';
+            height: 2px;
+            background-color: $s-green;
+            width: 30px;
+            position: absolute;
+            display: block;
+            left: 50%;
+            bottom: -4px;
+            margin-left: -15px;
+          }
+        }
+      }
+
       .text {
         color: $c-white;
         padding: 5px;
@@ -22,45 +48,29 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-  }
 
-  &:hover {
-    &.theme {
-      &-underlined {
-        .text {
-          color: $c-white;
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  input[type='radio'] {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    opacity: 0;
-
-    &:checked ~ .text {
+    &-grayButton {
+      font-size: $font-size-base;
       color: $c-white;
-      opacity: 1;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 4px;
 
-      &:before {
-        content: "";
-        height: 2px;
-        background-color: $s-green;
-        width: 30px;
-        position: absolute;
-        display: block;
-        left: 50%;
-        bottom: -4px;
-        margin-left: -15px;
+      &.checked {
+        background-color: $c-gray-mid;
       }
     }
   }
+}
+
+.input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
 }

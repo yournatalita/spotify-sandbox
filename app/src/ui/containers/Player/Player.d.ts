@@ -8,6 +8,7 @@ export interface DispatchProps {
   // TODO: Уточнить как типизировать Promise из dispatch
   getToken?: () => any;
   setPlayedTrackId: (id: string) => void;
+  setDeviceId: (id: string) => void;
 }
 
 export interface StateProps extends StoreInterface {}

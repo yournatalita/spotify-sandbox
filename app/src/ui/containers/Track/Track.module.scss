@@ -9,8 +9,8 @@
   background-color: $c-black-muted;
   padding: 10px;
   border-radius: 4px;
-  min-height: 120px;
-  max-height: 120px;
+  min-height: 90px;
+  max-height: 90px;
   box-sizing: border-box;
 }
 
@@ -31,7 +31,7 @@
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.plus {
+.play {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -65,47 +65,13 @@
   }
 }
 
-.play, .playActive {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  color: $c-gray;
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  z-index: 1;
-  top: 0;
-  left: calc(50% - 20px);
-  font-size: 28px;
-  opacity: 0.5;
-
-  > * {
-    pointer-events: none;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.playActive {
-  opacity: 1;
-  color: $c-white;
-}
-
 .info {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: flex-start;
+  flex: 1;
+  padding-right: 40px;
 }
 
 .name {
@@ -146,30 +112,6 @@
   color: $c-gray;
 }
 
-.audioContainer {
-  position: relative;
-  display: flex;
-  margin-top: 7px;
-}
-
-.noPreview {
-  color: $c-gray;
-  position: relative;
-  margin-top: 7px;
-}
-
-.noPreviewIcon {
-  position: relative;
-  opacity: 0.5;
-  width: 20px;
-  height: 20px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
 .tooltipTrigger {
   width: 40px;
   height: 40px;
@@ -181,8 +123,20 @@
   div {
     width: 40px;
     height: 40px;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
   }
+}
+
+.plus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  color: $c-gray;
+  font-size: 30px;
+  opacity: .5;
 }

@@ -11,6 +11,14 @@ const setPlayedTrackId = (id: string) => (dispatch: Dispatch): void => {
   );
 };
 
+const setDeviceId = (id: string) => (dispatch: Dispatch): void => {
+  dispatch(
+    actions.setDeviceIdAction({
+      deviceId: id
+    })
+  );
+};
+
 const getToken = () => (): Promise<string> => {
   return new Promise<string>(resolve => {
     axios({
@@ -32,4 +40,4 @@ const getToken = () => (): Promise<string> => {
   });
 };
 
-export { setPlayedTrackId, getToken };
+export { setPlayedTrackId, getToken, setDeviceId };

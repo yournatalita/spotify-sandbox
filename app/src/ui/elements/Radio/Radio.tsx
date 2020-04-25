@@ -28,6 +28,7 @@ const Radio = ({
       )}
     >
       <input
+        className={styles.input}
         value={value}
         name={name}
         onChange={onChange}

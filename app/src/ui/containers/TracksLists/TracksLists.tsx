@@ -72,7 +72,7 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
                 name={'tracks'}
                 value={'short_term'}
                 checked={checkedRange === 'short_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!tracks['short_term']) {
                     getTracksTerm({ getPersonalization, ...{ term: 'short_term' } });
@@ -91,7 +91,7 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
                 name={'tracks'}
                 value={'medium_term'}
                 checked={checkedRange === 'medium_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!tracks['medium_term']) {
                     getTracksTerm({ getPersonalization, ...{ term: 'medium_term' } });
@@ -110,7 +110,7 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
                 name={'tracks'}
                 value={'long_term'}
                 checked={checkedRange === 'long_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!tracks['long_term']) {
                     getTracksTerm({ getPersonalization, ...{ term: 'long_term' } });

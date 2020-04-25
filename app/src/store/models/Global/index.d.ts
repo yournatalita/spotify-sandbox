@@ -2,6 +2,7 @@ import { StoreInterface } from '../../index.d';
 
 export type DataProps = {
   playedTrackId?: string;
+  deviceId?: string;
 }
 
 export type TReducerReturn = {

@@ -97,7 +97,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
                 name={'artists'}
                 value={'short_term'}
                 checked={checkedRange === 'short_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!artists['short_term']) {
                     getArtistsTerm({ getPersonalization, ...{ term: 'short_term' } });
@@ -116,7 +116,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
                 name={'artists'}
                 value={'medium_term'}
                 checked={checkedRange === 'medium_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!artists['medium_term']) {
                     getArtistsTerm({ getPersonalization, ...{ term: 'medium_term' } });
@@ -135,7 +135,7 @@ const ArtistsLists = (props: ArtistsListProps): JSX.Element => {
                 name={'artists'}
                 value={'long_term'}
                 checked={checkedRange === 'long_term'}
-                themes={['underlined', 'uppercase', 'whiteText']}
+                themes={['grayButton']}
                 onChange={(): void => {
                   if (!artists['long_term']) {
                     getArtistsTerm({ getPersonalization, ...{ term: 'long_term' } });
