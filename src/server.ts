@@ -16,6 +16,7 @@ import * as userController from './controllers/user';
 import * as browseController from './controllers/browse';
 import * as personalizationController from './controllers/personalization';
 import * as videosController from './controllers/videos';
+import * as tracksController from './controllers/tracks';
 
 const APP_PATH = path.join(__dirname, '../app/public');
 
@@ -45,13 +46,24 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
 
     videosController.searchVideo({ req, res, params });
   });
+
+
+  app.get('/api/track', (req, res): void => {
+    const params = req.query;
+
+    tracksController.getTrackById({ accessToken, req, res, params });
+  });
+
+  app.get('/api/token', (req, res): void => {
+    res.status(200).send({ accessToken });
+  });
 };
 
 app.get('/login', (_req, res) => {
   const STATE = crypto.randomBytes(20).toString('hex');
   res.cookie(stateKey, STATE);
 
-  const scope = 'user-top-read user-follow-read user-read-private user-read-email';
+  const scope = 'user-top-read user-follow-read user-read-private user-read-email streaming user-read-email user-read-private';
   res.redirect(
     'https://accounts.spotify.com/authorize?' +
       querystring.stringify({

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+
 import { usePalette } from 'react-palette';
 import hexRgb from 'hex-rgb';
 
-import { TTrack } from './Track.d';
+import { MainProps } from '../../../pages/main.d';
+import { TrackDispatchProps, TrackProps } from './Track.d';
+
 import { ReactComponent as IconPlay } from '../../../assets/icons/play.svg';
 import { ReactComponent as IconNoMusic } from '../../../assets/icons/no-music.svg';
 import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
+
+import { operationsGlobal } from '../../../store/models/Global';
 
 import Audio from '../../elements/Audio/Audio';
 import Tooltip from '../../elements/Tooltip/Tooltip';
@@ -22,10 +28,11 @@ const getRgb = (hex?: string): string | undefined => {
   return undefined;
 };
 
-const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element => {
+const Track = ({ track, playedTrackId, setPlayedTrackId }: TrackProps): JSX.Element => {
   const { id, name, artists, album, explicit, preview_url } = track;
-  let audioRef: HTMLAudioElement | null = null;
+  const [played, setPlayed] = useState(playedTrackId === id);
 
+  let audioRef: HTMLAudioElement | null = null;
   const dataColors = usePalette(album.images[1].url).data;
   const darkMuted = {
     '--darkMuted':
@@ -41,6 +48,14 @@ const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element =
       getRgb(dataColors.muted) ||
       getRgb(dataColors.vibrant)
   } as React.CSSProperties;
+
+  useEffect(() => {
+    if (played && playedTrackId && playedTrackId !== id) {
+      audioRef?.pause();
+      setPlayedTrackId('');
+      setPlayed(false);
+    }
+  }, [playedTrackId, audioRef, id, setPlayedTrackId, played, setPlayed]);
 
   return (
     <div className={styles.root}>
@@ -93,23 +108,25 @@ const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element =
           <div className={styles.preview}>
             <Button
               externalStyles={{
-                root: playedTrackId === id ? styles.playActive : styles.play
+                root: played ? styles.playActive : styles.play
               }}
               themes={['black']}
               type="button"
               onClick={(): void => {
-                if (audioRef && playedTrackId !== id) {
+                if (audioRef && !played) {
                   audioRef.play().then(() => {
-                    onPlay(id);
+                    setPlayedTrackId(id);
+                    setPlayed(true);
                   });
                 } else if (audioRef) {
                   audioRef.pause();
-                  onPause();
+                  setPlayedTrackId('');
+                  setPlayed(false);
                 }
               }}
             >
-              {playedTrackId !== id && <IconPlay />}
-              {playedTrackId === id && <IconStop />}
+              {!played && <IconPlay />}
+              {played && <IconStop />}
             </Button>
             {preview_url && (
               <Audio
@@ -117,6 +134,10 @@ const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element =
                 autoPlay={false}
                 onRefInit={(audio): void => {
                   audioRef = audio;
+                }}
+                onPause={() => {
+                  setPlayedTrackId('');
+                  setPlayed(false);
                 }}
                 cssColors={{
                   darkMuted,
@@ -148,4 +169,14 @@ const Track = ({ track, onPlay, onPause, playedTrackId }: TTrack): JSX.Element =
   );
 };
 
-export default Track;
+const mapStateToProps = (state: MainProps): TrackDispatchProps => {
+  return {
+    playedTrackId: state && state.global ? state.global.playedTrackId : undefined
+  };
+};
+
+const mapDispatchToProps = {
+  ...operationsGlobal
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Track);

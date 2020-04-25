@@ -1,5 +1,29 @@
+import * as tracksController from './tracks';
 import { TPersonalization } from './personalization.d';
+import { TrackProps } from '../controllers/tracks.d';
 import axios from 'axios';
+
+const relinkTracks = (accessToken: string, track: TrackProps): TrackProps => {
+  const { preview_url, id } = track;
+
+  if (track && preview_url) {
+    return track;
+  }
+
+  // TODO: remove debugging
+  console.log(accessToken);
+
+  tracksController
+    .getTrackById({ accessToken, params: { id, market: '' } })
+    .then(data => {
+      // TODO: remove debugging
+      console.log(data.name, preview_url !== null);
+      return data;
+    })
+    .catch(() => {
+      return track;
+    });
+};
 
 export const getPersonalization = ({
   accessToken,
@@ -17,6 +41,15 @@ export const getPersonalization = ({
     })
     .then(response => {
       const { data } = response;
+
+      if (typePath === 'tracks') {
+        const { items } = data;
+        let newItems = [];
+
+        items.forEach((track: TrackProps) => {
+          newItems.push(relinkTracks(accessToken, track));
+        });
+      }
 
       res.status(200).send(data);
     })

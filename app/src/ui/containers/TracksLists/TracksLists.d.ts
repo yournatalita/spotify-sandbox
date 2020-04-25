@@ -10,7 +10,6 @@ type TSliderRenderProps = ReactIdSwiperProps;
 export interface TracksListsProps extends DataPropsPersonalization {
   getPersonalization?: TPersonalizationRequest;
   setRangeChosenTracks?: (range: string) => void;
-  setPlayedTrackId?: (id: string) => void;
   playedTrackId?: string;
 }
 
@@ -19,4 +18,4 @@ export interface ChangeTermEvent {
   term?: string;
 }
 
-export interface TTrack extends SpotifyApi.SingleTrackResponse {};
+export interface TrackProps extends SpotifyApi.SingleTrackResponse {};

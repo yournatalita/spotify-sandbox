@@ -4,6 +4,7 @@ import { get } from 'idb-keyval';
 
 import MainLayout from '../ui/containers/MainLayout/MainLayout';
 import Sidebar from '../ui/containers/Sidebar/Sidebar';
+import Player from '../ui/containers/Player/Player';
 
 import { MainProps } from './main.d';
 import { operationsPersonalization } from '../store/models/Personalization';
@@ -53,14 +54,17 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
   }, [getPersonalization]);
 
   return (
-    <div className="Main">
+    <main className="Main">
       <div className={'Main__Sidebar'}>
         <Sidebar />
       </div>
       <div className={'Main__MainLayout'}>
         <MainLayout />
       </div>
-    </div>
+      <div className={'Main__Player'}>
+        <Player />
+      </div>
+    </main>
   );
 };
 

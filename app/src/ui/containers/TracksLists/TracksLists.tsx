@@ -9,12 +9,11 @@ import Button from '../../elements/Button/Button';
 import Slider, { getStyles as getStylesSlider } from '../../components/Slider/Slider';
 
 import { MainProps } from '../../../pages/main.d';
-import { TracksListsProps, TSliderRenderProps, TTrack, ChangeTermEvent } from './TracksLists.d';
+import { TracksListsProps, TSliderRenderProps, TrackProps, ChangeTermEvent } from './TracksLists.d';
 import styles from './TracksLists.module.scss';
 import { operationsPersonalization } from '../../../store/models/Personalization';
-import { operationsGlobal } from '../../../store/models/Global';
 
-import Track from '../../components/Track/Track';
+import Track from '../Track/Track';
 import Radio from '../../elements/Radio/Radio';
 
 const getTracksTerm = ({ getPersonalization, term }: ChangeTermEvent) => {
@@ -59,13 +58,7 @@ const setTermDB = (term: string): void => {
 };
 
 const TracksLists = (props: TracksListsProps): JSX.Element => {
-  const {
-    tracks,
-    getPersonalization,
-    setRangeChosenTracks,
-    playedTrackId,
-    setPlayedTrackId
-  } = props;
+  const { tracks, getPersonalization, setRangeChosenTracks } = props;
   const { checkedRange } = tracks || {};
   const { items } = (tracks && tracks[checkedRange || '']) || undefined;
 
@@ -158,19 +151,10 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
                 {items &&
                   items.length &&
                   items.map(
-                    (track: TTrack): JSX.Element => {
+                    (track: TrackProps): JSX.Element => {
                       return (
                         <div key={track.id} className={styles.item}>
-                          <Track
-                            track={track}
-                            playedTrackId={playedTrackId}
-                            onPlay={(id): void => {
-                              if (setPlayedTrackId) setPlayedTrackId(id);
-                            }}
-                            onPause={(): void => {
-                              if (setPlayedTrackId) setPlayedTrackId('');
-                            }}
-                          />
+                          <Track track={track} />
                         </div>
                       );
                     }
@@ -186,14 +170,12 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
 
 const mapStateToProps = (state: MainProps): TracksListsProps => {
   return {
-    tracks: state && state.personalization ? state.personalization.tracks : undefined,
-    playedTrackId: state && state.global ? state.global.playedTrackId : undefined
+    tracks: state && state.personalization ? state.personalization.tracks : undefined
   };
 };
 
 const mapDispatchToProps = {
-  ...operationsPersonalization,
-  ...operationsGlobal
+  ...operationsPersonalization
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TracksLists);

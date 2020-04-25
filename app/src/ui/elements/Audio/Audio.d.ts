@@ -11,4 +11,6 @@ export interface AudioProps extends React.AudioHTMLAttributes<T> {
     darkMuted: React.CSSProperties;
     lightMuted: React.CSSProperties;
   };
+  onPause?: () => void;
 }
+

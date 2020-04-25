@@ -9,17 +9,28 @@ const renderTime = (duration: number): JSX.Element => {
 
   if (timeInSecs >= 60) {
     const mins = Math.floor(timeInSecs / 60);
+    const diff = timeInSecs - mins * 60;
+    const seconds = diff > 9 ? diff : `0${diff}`;
     return (
       <span>
-        {mins}:{timeInSecs - mins * 60}
+        {mins}:{seconds}
       </span>
     );
+  } else if (timeInSecs < 10) {
+    return <span>0:0{timeInSecs}</span>;
   }
 
   return <span>0:{timeInSecs}</span>;
 };
 
-const Audio = ({ externalStyles, src, onRefInit, cssColors, ...rest }: AudioProps): JSX.Element => {
+const Audio = ({
+  externalStyles,
+  src,
+  onRefInit,
+  onPause,
+  cssColors,
+  ...rest
+}: AudioProps): JSX.Element => {
   const [playedPosition, setPlayedPosition] = useState(0);
   const [duration, setDuration] = useState(0);
 
@@ -40,6 +51,10 @@ const Audio = ({ externalStyles, src, onRefInit, cssColors, ...rest }: AudioProp
         onTimeUpdate={(e): void => {
           setPlayedPosition(e.currentTarget.currentTime);
         }}
+        onEnded={(): void => {
+          setPlayedPosition(0);
+          if (onPause) onPause();
+        }}
         {...rest}
       />
       {duration && (
@@ -50,7 +65,7 @@ const Audio = ({ externalStyles, src, onRefInit, cssColors, ...rest }: AudioProp
               width: `${((playedPosition / duration) * 100).toFixed(3)}%`
             }}
           />
-          <div className={styles.time}>{renderTime(duration)}</div>
+          <div className={styles.time}>{renderTime(duration - playedPosition)}</div>
         </div>
       )}
     </div>
