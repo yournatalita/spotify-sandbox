@@ -50,6 +50,7 @@ export interface Video {
 
 export interface Global {
   playedTrackId?: string;
+  deviceId?: string;
 }
 
 export interface StoreInterface {

@@ -5,6 +5,7 @@ import * as path from 'path';
 import * as querystring from 'querystring';
 import cookieParser from 'cookie-parser';
 import * as crypto from 'crypto';
+import bodyParser from 'body-parser';
 
 const clientId = 'b28af6ab5fa3404ebe1b04c1ffd156dc';
 const clientSecret = '5073aaa6ac504b22a8d541901cbcc795';
@@ -12,18 +13,23 @@ const redirectUri = 'http://localhost:8888/callback/';
 const stateKey = 'spotify_auth_state';
 const app = express();
 
+import { SCOPES } from './constants/scopes';
+
 import * as userController from './controllers/user';
 import * as browseController from './controllers/browse';
 import * as personalizationController from './controllers/personalization';
 import * as videosController from './controllers/videos';
 import * as tracksController from './controllers/tracks';
+import * as playerController from './controllers/player';
 
 const APP_PATH = path.join(__dirname, '../app/public');
 
 app
   .use(express.static(APP_PATH))
   .use(cors())
-  .use(cookieParser());
+  .use(cookieParser())
+  .use(bodyParser.urlencoded({ extended: false }))
+  .use(bodyParser.json());
 
 const setApiListeners = (accessToken: string, _refreshToken: string): void => {
   app.get('/api/user', (req, res): void => {
@@ -38,7 +44,13 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
     const { typePath } = req.query || {};
     const params = req.query;
 
-    personalizationController.getPersonalization({ accessToken, req, res, options: { typePath }, params });
+    personalizationController.getPersonalization({
+      accessToken,
+      req,
+      res,
+      options: { typePath },
+      params
+    });
   });
 
   app.get('/api/video', (req, res): void => {
@@ -46,7 +58,6 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
 
     videosController.searchVideo({ req, res, params });
   });
-
 
   app.get('/api/track', (req, res): void => {
     const params = req.query;
@@ -57,19 +68,25 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
   app.get('/api/token', (req, res): void => {
     res.status(200).send({ accessToken });
   });
+
+  app.put('/api/play', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.play({ accessToken, req, res, params, data });
+  });
 };
 
 app.get('/login', (_req, res) => {
   const STATE = crypto.randomBytes(20).toString('hex');
   res.cookie(stateKey, STATE);
 
-  const scope = 'user-top-read user-follow-read user-read-private user-read-email streaming user-read-email user-read-private';
   res.redirect(
     'https://accounts.spotify.com/authorize?' +
       querystring.stringify({
         response_type: 'code',
         client_id: clientId,
-        scope: scope,
+        scope: SCOPES,
         redirect_uri: redirectUri,
         state: STATE
       })

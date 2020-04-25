@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { MainProps } from '../../../pages/main.d';
@@ -8,22 +8,31 @@ import { ReactComponent as IconPlay } from '../../../assets/icons/play.svg';
 // import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
 
 import { operationsGlobal } from '../../../store/models/Global';
+import { operationsPlayer } from '../../../store/models/Player';
 
 import Tooltip from '../../elements/Tooltip/Tooltip';
 import Button from '../../elements/Button/Button';
 
 import styles from './Track.module.scss';
 
-const Track = ({ track, playedTrackId, setPlayedTrackId }: TrackProps): JSX.Element => {
-  const { id, name, artists, album, explicit } = track;
-  const [played, setPlayed] = useState(playedTrackId === id);
+const playTrack = ({ track, play, deviceId }: Partial<TrackProps>) => {
+  const { uri } = track || {};
 
-  useEffect(() => {
-    if (played && playedTrackId && playedTrackId !== id) {
-      setPlayedTrackId('');
-      setPlayed(false);
-    }
-  }, [playedTrackId, id, setPlayedTrackId, played, setPlayed]);
+  if (play && track && uri) {
+    play(
+      {
+        data: {
+          uris: [uri],
+          deviceId
+        }
+      },
+      track
+    );
+  }
+};
+
+const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Element => {
+  const { id, name, artists, album, explicit } = track;
 
   return (
     <div className={styles.root}>
@@ -42,6 +51,10 @@ const Track = ({ track, playedTrackId, setPlayedTrackId }: TrackProps): JSX.Elem
             }}
             themes={['black']}
             type="button"
+            onClick={() => {
+              setPlayedTrackId(id);
+              playTrack({ track, deviceId, play });
+            }}
           >
             <span className={styles.tooltipTrigger}>
               <Tooltip
@@ -97,12 +110,14 @@ const Track = ({ track, playedTrackId, setPlayedTrackId }: TrackProps): JSX.Elem
 
 const mapStateToProps = (state: MainProps): TrackDispatchProps => {
   return {
-    playedTrackId: state && state.global ? state.global.playedTrackId : undefined
+    playedTrackId: state && state.global ? state.global.playedTrackId : undefined,
+    deviceId: state && state.global ? state.global.deviceId : undefined
   };
 };
 
 const mapDispatchToProps = {
-  ...operationsGlobal
+  ...operationsGlobal,
+  ...operationsPlayer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Track);
