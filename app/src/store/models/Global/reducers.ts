@@ -10,10 +10,12 @@ const reducer = (state: GlobalReducerState = INITIAL_STATE, { type, payload }: T
   switch (type) {
     case types.PLAYED_TRACK:
       return {
+        ...state,
         ...payload
       };
     case types.DEVICE_ID:
       return {
+        ...state,
         ...payload
       };
     default:

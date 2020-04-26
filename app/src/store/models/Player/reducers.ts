@@ -10,6 +10,17 @@ const reducer = (state: PlayerReducerState = INITIAL_STATE, { type, payload }: T
   switch (type) {
     case types.PLAY:
       return {
+        ...state,
+        ...payload
+      };
+    case types.STATE:
+      return {
+        ...state,
+        ...payload
+      };
+    case types.RECENT:
+      return {
+        ...state,
         ...payload
       };
     default:

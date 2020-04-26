@@ -24,16 +24,16 @@ body {
   background: $g-background-black;
 
   &__Sidebar {
-    width: 230px;
+    width: 240px;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,.8);
+    background: linear-gradient(to top, #181818, #000);
   }
 
   &__MainLayout {
-    margin-left: 230px;
+    margin-left: 240px;
   }
 
   &__Player {

@@ -53,9 +53,14 @@ export interface Global {
   deviceId?: string;
 }
 
+export interface Player {
+  track?: SpotifyApi.SingleTrackResponse;
+}
+
 export interface StoreInterface {
   router?: Router;
   personalization?: Personalization;
   video?: Video;
   global?: Global;
+  player?: PLayer;
 }

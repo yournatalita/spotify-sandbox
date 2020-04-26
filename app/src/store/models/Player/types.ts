@@ -1,3 +1,5 @@
 const PLAY = 'player/PLAY';
+const STATE = 'player/STATE';
+const RECENT = 'player/RECENT';
 
-export { PLAY };
+export { PLAY, RECENT, STATE };

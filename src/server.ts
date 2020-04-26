@@ -75,6 +75,20 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
 
     playerController.play({ accessToken, req, res, params, data });
   });
+
+  app.get('/api/player/state', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.getState({ accessToken, req, res, params, data });
+  });
+
+  app.get('/api/player/recent', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.getRecentlyPlayed({ accessToken, req, res, params, data });
+  });
 };
 
 app.get('/login', (_req, res) => {

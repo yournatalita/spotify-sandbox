@@ -9,6 +9,8 @@ export interface DispatchProps {
   getToken?: () => any;
   setPlayedTrackId: (id: string) => void;
   setDeviceId: (id: string) => void;
+  getState: () => void;
+  getRecent: () => void;
 }
 
 export interface StateProps extends StoreInterface {}
