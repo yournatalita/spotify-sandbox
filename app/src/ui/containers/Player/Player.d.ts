@@ -7,10 +7,15 @@ import { Dispatch, AnyAction } from 'redux';
 export interface DispatchProps {
   // TODO: Уточнить как типизировать Promise из dispatch
   getToken?: () => any;
-  setPlayedTrackId: (id: string) => void;
+  setPlayedTrackId?: (id: string) => void;
   setDeviceId: (id: string) => void;
   getState: () => void;
   getRecent: () => void;
+  setState: (state: Spotify.PlaybackState) => void;
+  play?: (options: AxiosRequestConfig) => void;
+  playNext?: (options: AxiosRequestConfig) => void;
+  playPrev?: (options: AxiosRequestConfig) => void;
+  pause?: (options: AxiosRequestConfig) => void;
 }
 
 export interface StateProps extends StoreInterface {}

@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import { MainProps } from '../../../pages/main.d';
-import { TrackDispatchProps, TrackProps } from './Track.d';
+import { TrackDispatchProps, TrackProps, PlayerProps } from './Track.d';
 
 import { ReactComponent as IconPlay } from '../../../assets/icons/play.svg';
-// import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
+import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
 
 import { operationsGlobal } from '../../../store/models/Global';
 import { operationsPlayer } from '../../../store/models/Player';
@@ -15,27 +16,52 @@ import Button from '../../elements/Button/Button';
 
 import styles from './Track.module.scss';
 
-const playTrack = ({ track, play, deviceId }: Partial<TrackProps>) => {
-  const { uri } = track || {};
+const playTrack = (
+  { track, play, deviceId }: Partial<TrackProps>,
+  player: PlayerProps,
+  listUris: string[]
+) => {
+  const { uri, id } = track || {};
+  const { state } = player || {};
+  const playerTrackId = player && player.track && player.track.id;
 
   if (play && track && uri) {
-    play(
-      {
-        data: {
-          uris: [uri],
-          deviceId
-        }
-      },
-      track
-    );
+    play({
+      data: {
+        uris: listUris,
+        deviceId,
+        offset: {
+          uri
+        },
+        position_ms: state && state.position && playerTrackId === id ? state.position : 0
+      }
+    });
   }
 };
 
-const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Element => {
+const pauseTrack = ({ pause, deviceId }: Partial<TrackProps>) => {
+  if (pause && deviceId) {
+    pause({
+      data: {
+        deviceId
+      }
+    });
+  }
+};
+
+const Track = ({
+  track,
+  play,
+  player,
+  pause,
+  playedTrackId,
+  deviceId,
+  listUris
+}: TrackProps): JSX.Element => {
   const { id, name, artists, album, explicit } = track;
 
   return (
-    <div className={styles.root}>
+    <div className={classNames(styles.root, playedTrackId === id && styles.played)}>
       <div className={styles.container}>
         <div className={styles.image}>
           <img
@@ -51,9 +77,12 @@ const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Ele
             }}
             themes={['black']}
             type="button"
-            onClick={() => {
-              setPlayedTrackId(id);
-              playTrack({ track, deviceId, play });
+            onClick={(): void => {
+              if (!playedTrackId || playedTrackId !== id) {
+                playTrack({ track, deviceId, play }, player, listUris);
+              } else {
+                pauseTrack({ track, pause, deviceId });
+              }
             }}
           >
             <span className={styles.tooltipTrigger}>
@@ -61,11 +90,14 @@ const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Ele
                 position="top"
                 theme={'dark'}
                 offset={'0,10'}
-                delay={[1000, 0]}
-                content="Play the track"
+                delay={[5000, 0]}
+                content={playedTrackId !== id ? 'Play' : 'Pause'}
                 trigger="mouseenter focus"
               >
-                <IconPlay />
+                <>
+                  {(!playedTrackId || playedTrackId !== id) && <IconPlay />}
+                  {playedTrackId && playedTrackId === id && <IconStop />}
+                </>
               </Tooltip>
             </span>
           </Button>
@@ -94,7 +126,7 @@ const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Ele
                 position="top"
                 theme={'dark'}
                 offset={'0,10'}
-                delay={[1000, 0]}
+                delay={[2000, 0]}
                 content="Add to playlist"
                 trigger="mouseenter focus"
               >
@@ -111,7 +143,8 @@ const Track = ({ track, play, setPlayedTrackId, deviceId }: TrackProps): JSX.Ele
 const mapStateToProps = (state: MainProps): TrackDispatchProps => {
   return {
     playedTrackId: state && state.global ? state.global.playedTrackId : undefined,
-    deviceId: state && state.global ? state.global.deviceId : undefined
+    deviceId: state && state.global ? state.global.deviceId : undefined,
+    player: state && state.player ? state.player : undefined
   };
 };
 

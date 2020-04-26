@@ -23,6 +23,70 @@ export const play = ({ accessToken, req, res, data }: TPlayer): void => {
     });
 };
 
+export const playNext = ({ accessToken, req, res, data }: TPlayer): void => {
+  const { deviceId } = data;
+
+  axios
+    .post(`https://api.spotify.com/v1/me/player/next?device_id=${deviceId}`, data, {
+      headers: { Authorization: 'Bearer ' + accessToken },
+      params: { device_id: deviceId }
+    })
+    .then(response => {
+      const { data } = response;
+
+      res.status(200).send(data);
+    })
+    .catch(error => {
+      // TODO: remove debugging
+      console.log('fail', error.response.status, error.response.data);
+
+      res.status(error.response.status).send(error);
+    });
+};
+
+export const playPrev = ({ accessToken, req, res, data }: TPlayer): void => {
+  const { deviceId } = data;
+
+  axios
+    .post(`https://api.spotify.com/v1/me/player/previous?device_id=${deviceId}`, data, {
+      headers: { Authorization: 'Bearer ' + accessToken },
+      params: { device_id: deviceId }
+    })
+    .then(response => {
+      const { data } = response;
+
+      res.status(200).send(data);
+    })
+    .catch(error => {
+      // TODO: remove debugging
+      console.log('fail', error.response.status, error.response.data);
+
+      res.status(error.response.status).send(error);
+    });
+};
+
+export const pause = ({ accessToken, req, res, data }: TPlayer): void => {
+  const { deviceId } = data;
+
+  axios
+    .put(`https://api.spotify.com/v1/me/player/pause?device_id=${deviceId}`, data, {
+      headers: { Authorization: 'Bearer ' + accessToken },
+      params: { device_id: deviceId }
+    })
+    .then(response => {
+      const { data } = response;
+
+      res.status(200).send(data);
+    })
+    .catch(error => {
+      // TODO: remove debugging
+      console.log('fail', error.response.status, error.response.data);
+
+      res.status(error.response.status).send(error);
+    });
+};
+
+
 export const getState = ({ accessToken, req, res, data }: TPlayer): void => {
   axios
     .get(`https://api.spotify.com/v1/me/player`, {

@@ -55,6 +55,7 @@ export interface Global {
 
 export interface Player {
   track?: SpotifyApi.SingleTrackResponse;
+  state?: Spotify.PlaybackState;
 }
 
 export interface StoreInterface {

@@ -76,6 +76,27 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
     playerController.play({ accessToken, req, res, params, data });
   });
 
+  app.post('/api/play/next', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.playNext({ accessToken, req, res, params, data });
+  });
+
+  app.post('/api/play/prev', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.playPrev({ accessToken, req, res, params, data });
+  });
+
+  app.put('/api/pause', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.pause({ accessToken, req, res, params, data });
+  });
+
   app.get('/api/player/state', (req, res): void => {
     const params = req.query;
     const data = req.body;

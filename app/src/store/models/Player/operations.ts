@@ -2,11 +2,12 @@ import axios from 'axios';
 import { Dispatch } from 'redux';
 import { IRequest } from '../declarations';
 
-import { TTrack } from './index.d';
+import { TPlayerState } from './index.d';
 
 import * as actions from './actions';
+import * as globalActions from '../Global/actions';
 
-const play = (options: IRequest, track: TTrack) => (dispatch: Dispatch) => {
+const play = (options: IRequest) => () => {
   const { params, data } = options;
 
   axios({
@@ -14,13 +15,59 @@ const play = (options: IRequest, track: TTrack) => (dispatch: Dispatch) => {
     method: 'put',
     params,
     data
-  })
-    .then(() => {
-      dispatch(actions.playAction(track));
+  }).catch(e => {
+    console.error(e);
+  });
+};
+
+const pause = (options: IRequest) => () => {
+  const { params, data } = options;
+
+  axios({
+    url: 'api/pause',
+    method: 'put',
+    params,
+    data
+  }).catch(e => {
+    console.error(e);
+  });
+};
+
+const playNext = (options: IRequest) => () => {
+  const { params, data } = options;
+
+  axios({
+    url: 'api/play/next',
+    method: 'post',
+    params,
+    data
+  }).catch(e => {
+    console.error(e);
+  });
+};
+
+const playPrev = (options: IRequest) => () => {
+  const { params, data } = options;
+
+  axios({
+    url: 'api/play/prev',
+    method: 'post',
+    params,
+    data
+  }).catch(e => {
+    console.error(e);
+  });
+};
+
+const setState = (state: TPlayerState) => (dispatch: Dispatch) => {
+  const { track_window } = state;
+  dispatch(actions.setStateAction(state));
+
+  dispatch(
+    globalActions.setPlayedTrackIdAction({
+      playedTrackId: track_window.current_track.id || undefined
     })
-    .catch(e => {
-      console.error(e);
-    });
+  );
 };
 
 const getState = () => (): void => {
@@ -53,4 +100,4 @@ const getRecent = () => (dispatch: Dispatch): void => {
     });
 };
 
-export { play, getState, getRecent };
+export { play, getState, getRecent, pause, setState, playNext, playPrev };

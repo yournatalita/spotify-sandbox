@@ -17,12 +17,22 @@
 }
 
 .info {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   margin-left: 20px;
+  flex: 1;
 }
-
 
 .songName {
   color: $c-white;
   font-size: 16px;
   font-weight: 500;
+  width: 100%;
+  margin-bottom: 6px;
 }
+
+.artists {
+  color: $c-gray;
+}
+

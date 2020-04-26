@@ -12,8 +12,8 @@ const TrackInfo = (props: TTrackInfo) => {
         <img src={album.images[0].url} alt={album.name} className={styles.img} />
       </div>
       <div className={styles.info}>
-        <div className={styles.songName}>{name}</div>
-        <div className={styles.artists}>
+        <span className={styles.songName}>{name}</span>
+        <span className={styles.artists}>
           {artists.map((artist, index) => {
             if (index !== artists.length - 1) {
               return `${artist.name}, `;
@@ -21,7 +21,7 @@ const TrackInfo = (props: TTrackInfo) => {
 
             return artist.name;
           })}
-        </div>
+        </span>
       </div>
     </div>
   );

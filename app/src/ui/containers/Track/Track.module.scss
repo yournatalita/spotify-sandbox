@@ -12,6 +12,11 @@
   min-height: 90px;
   max-height: 90px;
   box-sizing: border-box;
+  transition: background-color .25s ease-in-out;
+
+  &.played {
+    background-color: $c-dirty-blue-lightest;
+  }
 }
 
 .container {
@@ -22,6 +27,23 @@
   display: flex;
   margin-right: 20px;
   position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $c-black;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+
+    .played & {
+      opacity: .5;
+    }
+  }
 }
 
 .img {
@@ -62,6 +84,10 @@
   .root:hover & {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .played & {
+    opacity: 1;
   }
 }
 

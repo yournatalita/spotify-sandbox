@@ -57,6 +57,10 @@ const setTermDB = (term: string): void => {
   set(`${PREFIX}_term`, term);
 };
 
+const getListUris = (items: TrackProps[]): string[] => {
+  return items.map(item => item.uri);
+};
+
 const TracksLists = (props: TracksListsProps): JSX.Element => {
   const { tracks, getPersonalization, setRangeChosenTracks } = props;
   const { checkedRange } = tracks || {};
@@ -154,7 +158,7 @@ const TracksLists = (props: TracksListsProps): JSX.Element => {
                     (track: TrackProps): JSX.Element => {
                       return (
                         <div key={track.id} className={styles.item}>
-                          <Track track={track} />
+                          <Track track={track} listUris={getListUris(items)} />
                         </div>
                       );
                     }
