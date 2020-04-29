@@ -25,6 +25,7 @@
 .center {
   display: flex;
   justify-content: center;
+  flex-flow: wrap;
   width: calc(100% - 500px - 300px);
 }
 
@@ -52,6 +53,14 @@
   &:hover {
     border-color: $c-white;
     color: $c-white;
+  }
+}
+
+.prevContainer {
+
+  &.disabled {
+    pointer-events: none;
+    opacity: .3;
   }
 }
 
@@ -98,4 +107,11 @@
     background: currentColor;
     right: 10px;
   }
+}
+
+.trackContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }

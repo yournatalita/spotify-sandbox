@@ -1,11 +1,14 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
+import useInterval from '@use-it/interval';
 
 // @ts-ignore
 import makeAsyncScriptLoader from 'react-async-script';
 
 import TrackInfo from '../../elements/TrackInfo/TrackInfo';
 import Button from '../../elements/Button/Button';
+import AudioTrack from '../../elements/AudioTrack/AudioTrack';
 
 import { ReactComponent as IconPlay } from '../../../assets/icons/play.svg';
 import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
@@ -13,11 +16,11 @@ import { ReactComponent as IconStop } from '../../../assets/icons/stop.svg';
 import { operationsGlobal } from '../../../store/models/Global';
 import { operationsPlayer } from '../../../store/models/Player';
 
-import styles from './Player.module.scss';
-
 import { MainProps } from '../../../pages/main.d';
 import { StateProps, DispatchProps, SpotifyPlayerProps } from './Player.d';
 import { TrackProps } from '../Track/Track.d';
+
+import styles from './Player.module.scss';
 
 const setPlayerListeners = (
   playerSpotify: SpotifyPlayerProps,
@@ -97,7 +100,7 @@ const pauseTrack = ({ pause, deviceId }: Partial<TrackProps>) => {
   }
 };
 
-const playNextTrack = ({ playNext, deviceId}: Partial<TrackProps>) => {
+const playNextTrack = ({ playNext, deviceId }: Partial<TrackProps>) => {
   if (playNext && deviceId) {
     playNext({
       data: {
@@ -116,6 +119,7 @@ const playPrevTrack = ({ playPrev, deviceId }: Partial<TrackProps>) => {
     });
   }
 };
+
 const Player: FunctionComponent<StateProps & DispatchProps> = props => {
   const {
     getToken,
@@ -130,9 +134,24 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
     playNext,
     pause
   } = props;
+  let playerSpotify: SpotifyPlayerProps;
   const { playedTrackId, deviceId } = global || {};
   const { track, state } = player || {};
-  let playerSpotify: SpotifyPlayerProps;
+  const { disallows, duration, paused, position } = state || {};
+  const [playedPosition, setPlayedPosition] = useState(0);
+
+  useInterval(
+    () => {
+      setPlayedPosition(playedPosition > 0 ? playedPosition + 1000 : playedPosition + 10);
+    },
+    state && !paused ? 1000 : null
+  );
+
+  useEffect(() => {
+    if (position === 0) {
+      setPlayedPosition(0);
+    }
+  }, [position]);
 
   if (getToken && !(window as any).onSpotifyWebPlaybackSDKReady) {
     getToken().then((token: string) => {
@@ -148,7 +167,12 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
         </div>
         <div className={styles.center}>
           <div className={styles.player}>
-            <div className={styles.prevContainer}>
+            <div
+              className={classNames(
+                styles.prevContainer,
+                disallows && disallows.skipping_prev && styles.disabled
+              )}
+            >
               <Button
                 externalStyles={{
                   root: styles.stepPrev
@@ -196,7 +220,12 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
               </Button>
             </div>
           </div>
-          <div className={styles.track}></div>
+          <div className={styles.trackContainer}>
+            <AudioTrack
+              playedPosition={playedPosition}
+              duration={duration || (track && track.duration_ms) || 0}
+            />
+          </div>
         </div>
         <div className={styles.right}></div>
       </div>

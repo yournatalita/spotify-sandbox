@@ -60,12 +60,13 @@ const playPrev = (options: IRequest) => () => {
 };
 
 const setState = (state: TPlayerState) => (dispatch: Dispatch) => {
-  const { track_window } = state;
+  const { track_window, paused } = state;
   dispatch(actions.setStateAction(state));
+  const id = !paused ? track_window.current_track.id || undefined : '';
 
   dispatch(
     globalActions.setPlayedTrackIdAction({
-      playedTrackId: track_window.current_track.id || undefined
+      playedTrackId: id
     })
   );
 };

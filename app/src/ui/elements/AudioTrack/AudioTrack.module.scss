@@ -1,0 +1,50 @@
+@import 'src/assets/styles/services';
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.trackContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.track {
+  width: 100%;
+  height: 3px;
+  background-color: rgba($c-white, 0.2);
+}
+
+.timeMoved {
+  position: absolute;
+  color: $c-white;
+  opacity: .6;
+  font-size: 14px;
+  left: 0;
+  bottom: 14px;
+  border-radius: 1px;
+}
+
+.trackMoved {
+  position: absolute;
+  border-radius: 1px;
+  width: 100%;
+  height: 3px;
+  background-color: $c-white;
+  opacity: .7;
+  transition: 1s linear;
+}
+
+.timeAll {
+  position: absolute;
+  color: $c-white;
+  opacity: .6;
+  font-size: 14px;
+  right: 0;
+  bottom: 14px;
+}

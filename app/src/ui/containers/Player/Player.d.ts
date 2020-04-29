@@ -18,6 +18,11 @@ export interface DispatchProps {
   pause?: (options: AxiosRequestConfig) => void;
 }
 
+export type ReactStateProps = {
+  setPlayedPosition: (time: number) => void;
+  playedPosition: number;
+}
+
 export interface StateProps extends StoreInterface {}
 
 export type SpotifyProps = Spotify;
