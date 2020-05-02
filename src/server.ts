@@ -21,6 +21,7 @@ import * as personalizationController from './controllers/personalization';
 import * as videosController from './controllers/videos';
 import * as tracksController from './controllers/tracks';
 import * as playerController from './controllers/player';
+import * as artistsController from './controllers/artists';
 
 const APP_PATH = path.join(__dirname, '../app/public');
 
@@ -116,6 +117,13 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
     const data = req.body;
 
     playerController.getRecentlyPlayed({ accessToken, req, res, params, data });
+  });
+
+  app.get('/api/artist', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    artistsController.getArtist({ accessToken, req, res, params, data });
   });
 };
 

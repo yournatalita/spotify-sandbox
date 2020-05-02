@@ -1,8 +1,9 @@
-import { BrowserHistoryBuildOptions } from 'history';
+import { Location } from 'history';
+
 /// <reference types="spotify-api" />
 
-type Router = {
-  location?: BrowserHistoryBuildOptions;
+export type Router = {
+  location?: Location;
   action?: string;
 };
 
@@ -58,10 +59,15 @@ export interface Player {
   state?: Spotify.PlaybackState;
 }
 
+export interface Artists {
+  artist?: SpotifyApi.ArtistObjectFull;
+}
+
 export interface StoreInterface {
   router?: Router;
   personalization?: Personalization;
   video?: Video;
   global?: Global;
   player?: PLayer;
+  artists?: Artists;
 }

@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import { ArtistStateProps, DispatchProps, StateProps } from './Artist.d';
 import { StoreInterface } from '../../../store/index.d';
 import { operationsVideo } from '../../../store/models/Video/index';
+import { operationsPlayer } from '../../../store/models/Player/index';
 
 import styles from './Artist.module.scss';
 
@@ -23,11 +24,13 @@ const getRgb = (hex?: string): string | undefined => {
   return undefined;
 };
 
-const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
+const Artist: ComponentType<ArtistStateProps & DispatchProps & StateProps> = ({
   artist,
   video,
   getTopVideo,
   removeTopVideo,
+  pause,
+  deviceId,
   onHover
 }) => {
   const { genres, id, images, name, popularity } = artist;
@@ -163,6 +166,14 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
                   }}
                   onPlay={(): void => {
                     setVideoPlayed(true);
+
+                    if (pause && deviceId) {
+                      pause({
+                        data: {
+                          deviceId
+                        }
+                      });
+                    }
                   }}
                   onEnd={(): void => {
                     setVideoPlayed(false);
@@ -187,12 +198,15 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps> = ({
 
 const mapStateToProps = (state: StoreInterface): StateProps => {
   return {
-    video: state.video
+    video: state.video,
+    player: state.player,
+    deviceId: state.global && state.global.deviceId
   };
 };
 
 const mapDispatchToProps: DispatchProps = {
-  ...operationsVideo
+  ...operationsVideo,
+  ...operationsPlayer
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Artist);

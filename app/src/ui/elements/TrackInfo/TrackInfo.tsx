@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 import styles from './TrackInfo.module.scss';
+import stylesLink from '../UILink/UILink.module.scss';
 
 import { TTrackInfo } from './TrackInfo.d';
 
@@ -15,11 +18,17 @@ const TrackInfo = (props: TTrackInfo) => {
         <span className={styles.songName}>{name}</span>
         <span className={styles.artists}>
           {artists.map((artist, index) => {
-            if (index !== artists.length - 1) {
-              return `${artist.name}, `;
-            }
-
-            return artist.name;
+            return (
+              <span key={artist.id}>
+                <Link
+                  to={`/artist/${artist.id}`}
+                  className={classNames(stylesLink.root, stylesLink['theme-defaultUnderline'])}
+                >
+                  {artist.name}
+                </Link>
+                {index < artists.length - 1 && ', '}
+              </span>
+            );
           })}
         </span>
       </div>

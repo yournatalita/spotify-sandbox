@@ -2,6 +2,7 @@
 
 .root {
   display: flex;
+  padding-right: 10px;
 }
 
 .albumArt {
@@ -30,9 +31,15 @@
   font-weight: 500;
   width: 100%;
   margin-bottom: 6px;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
-.artists {
+.artists, .artist {
+  font-size: 12px;
   color: $c-gray;
 }
 

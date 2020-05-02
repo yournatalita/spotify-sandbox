@@ -5,6 +5,7 @@ import { history } from './store';
 
 import Home from './pages/home';
 import Main from './pages/main';
+import Artist from './pages/artist';
 
 const App = (): any => {
   return (
@@ -13,6 +14,7 @@ const App = (): any => {
         <Switch>
           <Route exact path={'/'} component={Home} />
           <Route exact path={'/main'} component={Main} />
+          <Route path={'/artist'} component={Artist} />
         </Switch>
       </ConnectedRouter>
     </div>

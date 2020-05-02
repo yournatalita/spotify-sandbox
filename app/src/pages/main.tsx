@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { ComponentType, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { get } from 'idb-keyval';
 
@@ -6,14 +6,14 @@ import MainLayout from '../ui/containers/MainLayout/MainLayout';
 import Sidebar from '../ui/containers/Sidebar/Sidebar';
 import Player from '../ui/containers/Player/Player';
 
-import { MainProps } from './main.d';
+import { DispatchProps, StateProps } from './main.d';
 import { operationsPersonalization } from '../store/models/Personalization';
 
 const getTermDB = (key: string): Promise<string> => {
   return get(key);
 };
 
-const Main = ({ getPersonalization }: MainProps): JSX.Element => {
+const Main: ComponentType<DispatchProps & StateProps> = ({ getPersonalization }) => {
   useEffect(() => {
     let termArtist = '';
     let termTracks = '';
@@ -68,7 +68,11 @@ const Main = ({ getPersonalization }: MainProps): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state: MainProps): MainProps => state;
+const mapStateToProps = (state: StateProps): StateProps => {
+  return {
+    router: state.router
+  };
+};
 
 const mapDispatchToProps = {
   ...operationsPersonalization

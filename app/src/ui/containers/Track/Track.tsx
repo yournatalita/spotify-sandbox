@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { MainProps } from '../../../pages/main.d';
@@ -15,6 +16,7 @@ import Tooltip from '../../elements/Tooltip/Tooltip';
 import Button from '../../elements/Button/Button';
 
 import styles from './Track.module.scss';
+import stylesLink from '../../elements/UILink/UILink.module.scss';
 
 const playTrack = (
   { track, play, deviceId }: Partial<TrackProps>,
@@ -108,7 +110,16 @@ const Track = ({
             {artists.map((artist, index) => {
               return (
                 <span key={artist.id}>
-                  <span className={styles.artist}>{artist.name}</span>
+                  <Link
+                    to={`/artist/${artist.id}`}
+                    className={classNames(
+                      styles.artist,
+                      stylesLink.root,
+                      stylesLink['theme-defaultUnderline']
+                    )}
+                  >
+                    {artist.name}
+                  </Link>
                   {index < artists.length - 1 && ', '}
                 </span>
               );
