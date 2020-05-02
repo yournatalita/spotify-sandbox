@@ -16,11 +16,16 @@ export interface DispatchProps {
   playNext?: (options: AxiosRequestConfig) => void;
   playPrev?: (options: AxiosRequestConfig) => void;
   pause?: (options: AxiosRequestConfig) => void;
+  seek?: (options: AxiosRequestConfig) => void;
 }
 
 export type ReactStateProps = {
   setPlayedPosition: (time: number) => void;
   playedPosition: number;
+}
+
+export type PlayerTrackProps = {
+  position: number;
 }
 
 export interface StateProps extends StoreInterface {}

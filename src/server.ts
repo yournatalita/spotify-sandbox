@@ -97,6 +97,13 @@ const setApiListeners = (accessToken: string, _refreshToken: string): void => {
     playerController.pause({ accessToken, req, res, params, data });
   });
 
+  app.put('/api/seek', (req, res): void => {
+    const params = req.query;
+    const data = req.body;
+
+    playerController.seek({ accessToken, req, res, params, data });
+  });
+
   app.get('/api/player/state', (req, res): void => {
     const params = req.query;
     const data = req.body;

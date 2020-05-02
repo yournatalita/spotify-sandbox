@@ -17,7 +17,7 @@ import { operationsGlobal } from '../../../store/models/Global';
 import { operationsPlayer } from '../../../store/models/Player';
 
 import { MainProps } from '../../../pages/main.d';
-import { StateProps, DispatchProps, SpotifyPlayerProps } from './Player.d';
+import { StateProps, DispatchProps, SpotifyPlayerProps, PlayerTrackProps } from './Player.d';
 import { TrackProps } from '../Track/Track.d';
 
 import styles from './Player.module.scss';
@@ -120,6 +120,21 @@ const playPrevTrack = ({ playPrev, deviceId }: Partial<TrackProps>) => {
   }
 };
 
+const seekPosition = ({
+  seek,
+  position,
+  deviceId
+}: Partial<TrackProps & DispatchProps & PlayerTrackProps>) => {
+  if (seek && deviceId && position) {
+    seek({
+      data: {
+        deviceId,
+        position_ms: position
+      }
+    });
+  }
+};
+
 const Player: FunctionComponent<StateProps & DispatchProps> = props => {
   const {
     getToken,
@@ -130,6 +145,7 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
     getRecent,
     global,
     play,
+    seek,
     playPrev,
     playNext,
     pause
@@ -142,14 +158,16 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
 
   useInterval(
     () => {
-      setPlayedPosition(playedPosition > 0 ? playedPosition + 1000 : playedPosition + 10);
+      setPlayedPosition(playedPosition > 0 ? playedPosition + 100 : playedPosition + 10);
     },
-    state && !paused ? 1000 : null
+    state && !paused ? 100 : null
   );
 
   useEffect(() => {
-    if (position === 0) {
+    if (position === 0 || !position) {
       setPlayedPosition(0);
+    } else {
+      setPlayedPosition(position);
     }
   }, [position]);
 
@@ -224,6 +242,9 @@ const Player: FunctionComponent<StateProps & DispatchProps> = props => {
             <AudioTrack
               playedPosition={playedPosition}
               duration={duration || (track && track.duration_ms) || 0}
+              onChange={(position): void => {
+                seekPosition({ seek, position, deviceId });
+              }}
             />
           </div>
         </div>

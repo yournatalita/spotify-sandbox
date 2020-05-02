@@ -1,5 +1,63 @@
 @import 'src/assets/styles/services';
 
+:global {
+  @import '~rc-slider/assets/index';
+
+  .rc-slider-track {
+    background: rgba($s-white, 0.7);
+    transition: background-color 0.25s ease-in-out;
+
+    .track:hover & {
+      background: $s-green;
+    }
+
+    .trackChanging & {
+      background: $s-green;
+    }
+  }
+
+  .rc-slider-rail {
+    background: rgba($s-white, 0.3);
+  }
+
+  .rc-slider-handle {
+    opacity: 0;
+    border: none;
+    background-color: $c-white;
+    cursor: default !important;
+
+    &:active {
+      border-color: $c-white;
+      box-shadow: none;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      width: 8px;
+      height: 8px;
+      top: 3px;
+      left: 3px;
+      opacity: 0;
+      box-shadow: inset 1px 3px 5px rgba($c-black, 0.5);
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .track:hover & {
+      opacity: 1;
+    }
+
+    .trackChanging & {
+      opacity: 1;
+    }
+  }
+}
+
 .root {
   position: relative;
   display: flex;
@@ -12,39 +70,35 @@
   display: flex;
   align-items: center;
   width: 100%;
-}
+  padding: 10px 0;
+  margin: -10px 0;
 
-.track {
-  width: 100%;
-  height: 3px;
-  background-color: rgba($c-white, 0.2);
+  &:hover {
+    .trackMoved {
+      background-color: $s-green;
+    }
+  }
 }
 
 .timeMoved {
   position: absolute;
   color: $c-white;
-  opacity: .6;
-  font-size: 14px;
+  opacity: 0.6;
+  font-size: 12px;
   left: 0;
-  bottom: 14px;
+  bottom: 24px;
   border-radius: 1px;
-}
-
-.trackMoved {
-  position: absolute;
-  border-radius: 1px;
-  width: 100%;
-  height: 3px;
-  background-color: $c-white;
-  opacity: .7;
-  transition: 1s linear;
 }
 
 .timeAll {
   position: absolute;
   color: $c-white;
-  opacity: .6;
-  font-size: 14px;
+  opacity: 0.6;
+  font-size: 12px;
   right: 0;
-  bottom: 14px;
+  bottom: 24px;
+}
+
+.track {
+  width: 100%;
 }

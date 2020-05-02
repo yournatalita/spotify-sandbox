@@ -7,11 +7,24 @@ import { TPlayerState } from './index.d';
 import * as actions from './actions';
 import * as globalActions from '../Global/actions';
 
-const play = (options: IRequest) => () => {
+const play = (options: IRequest) => (): void => {
   const { params, data } = options;
 
   axios({
     url: 'api/play',
+    method: 'put',
+    params,
+    data
+  }).catch(e => {
+    console.error(e);
+  });
+};
+
+const seek = (options: IRequest) => (): void => {
+  const { params, data } = options;
+
+  axios({
+    url: 'api/seek',
     method: 'put',
     params,
     data
@@ -101,4 +114,4 @@ const getRecent = () => (dispatch: Dispatch): void => {
     });
 };
 
-export { play, getState, getRecent, pause, setState, playNext, playPrev };
+export { play, getState, getRecent, pause, setState, playNext, playPrev, seek };

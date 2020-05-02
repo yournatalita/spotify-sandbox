@@ -23,6 +23,31 @@ export const play = ({ accessToken, req, res, data }: TPlayer): void => {
     });
 };
 
+export const seek = ({ accessToken, req, res, data }: TPlayer): void => {
+  const { deviceId, position_ms } = data;
+
+  axios
+    .put(
+      `https://api.spotify.com/v1/me/player/seek?device_id=${deviceId}&position_ms=${position_ms}`,
+      data,
+      {
+        headers: { Authorization: 'Bearer ' + accessToken },
+        params: { device_id: deviceId, position_ms }
+      }
+    )
+    .then(response => {
+      const { data } = response;
+
+      res.status(200).send(data);
+    })
+    .catch(error => {
+      // TODO: remove debugging
+      console.log('fail', error.response.status, error.response.data);
+
+      res.status(error.response.status).send(error);
+    });
+};
+
 export const playNext = ({ accessToken, req, res, data }: TPlayer): void => {
   const { deviceId } = data;
 
@@ -86,11 +111,10 @@ export const pause = ({ accessToken, req, res, data }: TPlayer): void => {
     });
 };
 
-
 export const getState = ({ accessToken, req, res, data }: TPlayer): void => {
   axios
     .get(`https://api.spotify.com/v1/me/player`, {
-      headers: { Authorization: 'Bearer ' + accessToken },
+      headers: { Authorization: 'Bearer ' + accessToken }
     })
     .then(response => {
       const { data } = response;
@@ -108,7 +132,7 @@ export const getState = ({ accessToken, req, res, data }: TPlayer): void => {
 export const getRecentlyPlayed = ({ accessToken, req, res, params }: TPlayer): void => {
   axios
     .get(`https://api.spotify.com/v1/me/player/recently-played`, {
-      headers: { Authorization: 'Bearer ' + accessToken },
+      headers: { Authorization: 'Bearer ' + accessToken }
     })
     .then(response => {
       const { data } = response;
