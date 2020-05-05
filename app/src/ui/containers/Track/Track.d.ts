@@ -8,6 +8,7 @@ export interface TrackDispatchProps {
   player?: Player;
 }
 export interface TrackProps extends TrackDispatchProps {
+  themes?: string[];
   track: SpotifyApi.SingleTrackResponse;
   listUris: string[];
   setPlayedTrackId: (id: string) => void;

@@ -1,15 +1,12 @@
 import * as types from './types';
 
-import { TReducerReturn, PersonalizationReducerState } from './index.d';
+import { TReducerReturn, VideoReducerState } from './index.d';
 
-const INITIAL_STATE: PersonalizationReducerState = {
-  type: ''
+const INITIAL_STATE: VideoReducerState = {
+  top: null
 };
 
-const reducer = (
-  state: PersonalizationReducerState = INITIAL_STATE,
-  { type, payload }: TReducerReturn
-) => {
+const reducer = (state: VideoReducerState = INITIAL_STATE, { type, payload }: TReducerReturn) => {
   switch (type) {
     case types.GET_TOP:
       return {
@@ -20,6 +17,14 @@ const reducer = (
       return {
         ...state,
         ...payload
+      };
+    case types.GET_VIDEO_TRACK:
+      return {
+        ...state,
+        top: {
+          ...state.top,
+          ...payload
+        }
       };
     default:
       return state;

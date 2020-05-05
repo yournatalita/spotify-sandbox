@@ -21,4 +21,10 @@ const getArtist = (id: string) => (dispatch: Dispatch): void => {
     });
 };
 
-export { getArtist };
+const clearArtist = () => (dispatch: Dispatch): void => {
+  // TODO: remove debugging
+  console.log('clerArtistOperation');
+  dispatch(actions.clearArtistAction());
+};
+
+export { getArtist, clearArtist };

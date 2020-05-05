@@ -19,7 +19,7 @@ const TrackInfo = (props: TTrackInfo) => {
         <span className={styles.artists}>
           {artists.map((artist, index) => {
             return (
-              <span key={artist.id}>
+              <span key={`TrackInfo-${artist.id}`}>
                 <Link
                   to={`/artist/${artist.id}`}
                   className={classNames(stylesLink.root, stylesLink['theme-defaultUnderline'])}

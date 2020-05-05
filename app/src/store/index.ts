@@ -10,6 +10,7 @@ import video from '../store/models/Video';
 import global from '../store/models/Global';
 import player from '../store/models/Player';
 import artists from '../store/models/Artists';
+import search from '../store/models/Search';
 
 export const history = createBrowserHistory();
 const enhancers = [];
@@ -29,6 +30,7 @@ const reducers = combineReducers({
   global,
   player,
   artists,
+  search,
   router: connectRouter(history)
 });
 

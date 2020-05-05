@@ -9,7 +9,7 @@
   border: 0 !important;
 }
 
-.js-focus-visible:focus:not(.focus-visible) {
+.js-focus-visible:focus:not(.focus-visible), button:focus:not(.focus-visible)  {
   outline: none;
 }
 

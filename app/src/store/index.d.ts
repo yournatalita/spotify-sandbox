@@ -25,9 +25,16 @@ export interface Personalization extends DataPropsPersonalization {
 
 interface VideoBlockInterface {
   id: string;
+  artistSpotifyId?: string;
   production_status: string;
   song_title: string;
   song_slug: string;
+  sources: {
+    source: string;
+    source_slug: string;
+    source_data: string;
+    is_primary: boolean;
+  }[];
   url: string;
   multiple_versions: boolean;
   version_name: string | null;
@@ -43,10 +50,12 @@ interface VideoBlockInterface {
     url: string;
     discogs_id: number;
   }[];
+  track?: SpotifyApi.TrackObjectFull;
 }
 
 export interface Video {
   top?: VideoBlockInterface | null;
+  loaded?: boolean;
 }
 
 export interface Global {
@@ -63,6 +72,10 @@ export interface Artists {
   artist?: SpotifyApi.ArtistObjectFull;
 }
 
+export interface Search {
+
+}
+
 export interface StoreInterface {
   router?: Router;
   personalization?: Personalization;
@@ -70,4 +83,5 @@ export interface StoreInterface {
   global?: Global;
   player?: PLayer;
   artists?: Artists;
+  search?: Search;
 }

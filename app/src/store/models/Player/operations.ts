@@ -11,7 +11,7 @@ const play = (options: IRequest) => (): void => {
   const { params, data } = options;
 
   axios({
-    url: 'api/play',
+    url: '/api/play',
     method: 'put',
     params,
     data
@@ -24,7 +24,7 @@ const seek = (options: IRequest) => (): void => {
   const { params, data } = options;
 
   axios({
-    url: 'api/seek',
+    url: '/api/seek',
     method: 'put',
     params,
     data
@@ -37,7 +37,7 @@ const pause = (options: IRequest) => () => {
   const { params, data } = options;
 
   axios({
-    url: 'api/pause',
+    url: '/api/pause',
     method: 'put',
     params,
     data
@@ -50,7 +50,7 @@ const playNext = (options: IRequest) => () => {
   const { params, data } = options;
 
   axios({
-    url: 'api/play/next',
+    url: '/api/play/next',
     method: 'post',
     params,
     data
@@ -63,7 +63,7 @@ const playPrev = (options: IRequest) => () => {
   const { params, data } = options;
 
   axios({
-    url: 'api/play/prev',
+    url: '/api/play/prev',
     method: 'post',
     params,
     data

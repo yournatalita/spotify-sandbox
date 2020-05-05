@@ -1,16 +1,17 @@
-import { Personalization } from '../../index.d';
+import { Personalization, VideoBlockInterface } from '../../index.d';
 
 export type TReducerReturn = {
   type: string;
   payload: Personalization;
 };
 
-export interface PersonalizationReducerState extends Personalization {
-  type: string;
+export interface VideoReducerState {
+  top: VideoBlockInterface | null;
 }
 
 export interface Video {
   id: string;
+  artistSpotifyId?: string;
   production_status: string;
   song_title: string;
   song_slug: string;
@@ -30,3 +31,8 @@ export interface Video {
     discogs_id: number;
   }[];
 }
+
+export type TopVideoData = {
+  q: string;
+  id?: string;
+};

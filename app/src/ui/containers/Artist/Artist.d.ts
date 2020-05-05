@@ -1,7 +1,7 @@
 /// <reference types="spotify-api" />
 import { IRequest } from '../../../store/models/declarations';
 import { Player } from '../../../store/index.d';
-import { Video } from '../../../store/models/Video';
+import { Video, TopVideoData } from '../../../store/models/Video';
 
 type TPersonalizationRequest = (options: IRequest) => {};
 
@@ -21,7 +21,7 @@ export interface ArtistStateProps {
 }
 
 export interface DispatchProps {
-  getTopVideo?: TPersonalizationRequest;
+  getTopVideo?: (data: TopVideoData) => void;
   getPersonalization?: TPersonalizationRequest;
   setRangeChosenArtists?: (range: string) => void;
   removeTopVideo?: () => void;

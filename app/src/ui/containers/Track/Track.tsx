@@ -58,12 +58,22 @@ const Track = ({
   pause,
   playedTrackId,
   deviceId,
+  themes,
   listUris
 }: TrackProps): JSX.Element => {
   const { id, name, artists, album, explicit } = track;
 
   return (
-    <div className={classNames(styles.root, playedTrackId === id && styles.played)}>
+    <div
+      className={classNames(
+        styles.root,
+        playedTrackId === id && styles.played,
+        themes?.reduce(
+          (classes: string, theme: string) => (classes += `${styles[`theme-${theme}`]} `),
+          ' '
+        )
+      )}
+    >
       <div className={styles.container}>
         <div className={styles.image}>
           <img

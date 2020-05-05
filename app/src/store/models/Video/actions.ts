@@ -7,6 +7,7 @@ import { IReducerReturn } from '../declarations.d';
 const getTopVideo = (data: Video): IReducerReturn => ({
   type: types.GET_TOP,
   payload: {
+    loaded: true,
     top: data
   }
 });
@@ -14,8 +15,16 @@ const getTopVideo = (data: Video): IReducerReturn => ({
 const removeTopVideo = (): IReducerReturn => ({
   type: types.GET_TOP,
   payload: {
+    loaded: false,
     top: null
   }
 });
 
-export { getTopVideo, removeTopVideo };
+const getTopVideoTrack = (data: SpotifyApi.TrackObjectFull): IReducerReturn => ({
+  type: types.GET_VIDEO_TRACK,
+  payload: {
+    track: data
+  }
+});
+
+export { getTopVideo, removeTopVideo, getTopVideoTrack };

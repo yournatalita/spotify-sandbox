@@ -1,15 +1,10 @@
+@import 'src/assets/styles/services';
+
 .root {
   min-height: 100vh;
   padding-bottom: 150px;
 }
 
-.image {
-  height: 400px;
-  width: 100%;
-}
-
-.img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
+.container {
+  display: flex;
 }

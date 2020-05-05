@@ -82,11 +82,7 @@ const Artist: ComponentType<ArtistStateProps & DispatchProps & StateProps> = ({
           style={lightVibrant}
           onMouseEnter={(): void => {
             if (getTopVideo) {
-              getTopVideo({
-                url: '/api/video',
-                method: 'get',
-                params: { q: name }
-              });
+              getTopVideo({ q: name });
             }
 
             onHover();
